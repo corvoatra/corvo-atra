@@ -1,0 +1,74 @@
+
+media:
+  - name: imagens
+    label: Imagens
+    input: assets/imagens/blog
+    output: /corvo-atra/assets/imagens/blog
+    categories: [image]
+    rename: safe
+
+  - name: arquivos
+    label: PDFs e downloads
+    input: assets/downloads
+    output: /corvo-atra/assets/downloads
+    categories: [document, compressed]
+    rename: safe
+
+content:
+  - name: posts
+    label: Publicações do blog
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date, category]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+
+      - name: date
+        label: Data de publicação
+        type: date
+        required: true
+
+      - name: description
+        label: Resumo
+        type: text
+
+      - name: category
+        label: Categoria
+        type: string
+
+      - name: image
+        label: Imagem de capa
+        type: image
+        options:
+          media: imagens
+
+      - name: image_alt
+        label: Descrição da imagem
+        type: string
+
+      - name: pdf
+        label: PDF para leitura
+        type: file
+        options:
+          media: arquivos
+          extensions: [pdf]
+
+      - name: downloads
+        label: Arquivos para download
+        type: file
+        options:
+          media: arquivos
+          multiple: true
+
+      - name: body
+        label: Conteúdo do artigo
+        type: rich-text
+        options:
+          media: imagens
