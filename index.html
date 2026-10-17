@@ -105,7 +105,7 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .home-author-copy .section-title{margin-left:0}
 .home-author-copy .section-copy{margin:0 0 26px}
 @media(max-width:650px){.home-author-grid{grid-template-columns:1fr;text-align:center}.home-author-photo{max-width:300px;margin:auto}.home-author-copy .section-copy{margin:0 auto 26px}}
-</style></head>
+</style>{% include pwa-head.html %}</head>
 <body>
 {% include site-header.html %}
 <hr class="rule"/>
@@ -142,5 +142,5 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 </section>
 </main>
 <footer id="contato"><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer>
-</body>
+{% include pwa-register.html %}</body>
 </html>
