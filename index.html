@@ -97,6 +97,14 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .home-posts-more{margin:0 auto}
 @media(max-width:760px){.home-posts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.home-posts-grid{grid-template-columns:1fr}}
+
+/* Apresentação do autor na página inicial */
+.home-author{border-top:1px solid var(--line)}
+.home-author-grid{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:clamp(30px,6vw,75px);align-items:center;max-width:950px;margin:auto;text-align:left}
+.home-author-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.home-author-copy .section-title{margin-left:0}
+.home-author-copy .section-copy{margin:0 0 26px}
+@media(max-width:650px){.home-author-grid{grid-template-columns:1fr;text-align:center}.home-author-photo{max-width:300px;margin:auto}.home-author-copy .section-copy{margin:0 auto 26px}}
 </style></head>
 <body>
 <header class="wrap"><a aria-label="Corvo Atra — início" class="wordmark" href="index.html"><img alt="Corvo Atra" src="assets/imagens/logo-corvo-atra.png"/></a><nav aria-label="Navegação principal"><a aria-current="page" href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav></header>
@@ -125,6 +133,7 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 </div>
 <a class="button home-posts-more" href="{{ '/blog/' | relative_url }}">Ver todas as postagens →</a>
 </section>
+<section class="home-author" id="sobre-autor"><div class="wrap home-author-grid"><div class="home-author-photo"><img loading="lazy" src="assets/imagens/foto-autor.jpg" alt="Retrato de Magnus Silva"/></div><div class="home-author-copy"><p class="eyebrow">Por trás das histórias</p><h2 class="section-title">Sobre o autor</h2><p class="section-copy">Magnus Silva é o pseudônimo literário de Rogério Alves da Silva, natural de São José dos Campos, São Paulo. Apaixonado por histórias desde a infância, encontrou nos universos fantásticos a inspiração para criar suas próprias narrativas.</p><a class="button" href="autor.html">Conhecer o autor →</a></div></div></section>
 <section class="wrap" id="sobre">
 <div aria-hidden="true" class="about-mark">✦</div>
 <p class="eyebrow">Nossa identidade</p>
