@@ -77,3 +77,24 @@ footer .links { display:flex !important; gap:16px 36px !important; margin:0 !imp
 footer .links a { text-decoration:none; }
 footer .copyright { font:normal .82rem/1.6 Arial,sans-serif; }
 @media(max-width:768px) { footer { padding:44px 18px 36px !important;gap:18px !important; } footer .links { gap:12px 22px !important; font-size:.94rem; } footer .brand {font-size:1.35rem !important;} }
+
+/* Navegação principal centralizada, maior e com destaque vermelho. */
+header.wrap nav a {
+  transition:color .2s ease,border-color .2s ease;
+}
+header.wrap nav a:hover,
+header.wrap nav a:focus-visible,
+header.wrap nav a:active,
+header.wrap nav a[aria-current="page"] {
+  color:#d83a3a !important;
+}
+@media (min-width:769px) {
+  header.wrap {position:relative;justify-content:center;}
+  header.wrap .wordmark {position:absolute;left:0;top:50%;transform:translateY(-50%);}
+  header.wrap nav {flex:0 1 auto;justify-content:center;font-size:.9rem !important;gap:clamp(16px,2.3vw,34px);}
+  header.wrap nav a[aria-current="page"] {border-bottom-color:#d83a3a;}
+}
+@media (max-width:768px) {
+  header.wrap nav {justify-content:center;font-size:.86rem !important;}
+  header.wrap nav a[aria-current="page"] {border-bottom:1px solid #d83a3a;padding-bottom:5px;}
+}
