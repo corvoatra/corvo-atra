@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for p in site.pages %}{% assign first_char = p.url | slice: 0, 1 %}{% assign extension = p.url | split: '.' | last %}{% if first_char == '/' and extension == 'html' or p.url == '/' or p.url == '/blog/' %}
+  <url><loc>{{ p.url | absolute_url | xml_escape }}</loc></url>
+{% endif %}{% endfor %}
+{% for post in site.posts %}
+  <url><loc>{{ post.url | absolute_url | xml_escape }}</loc><lastmod>{{ post.date | date: '%Y-%m-%d' }}</lastmod></url>
+{% endfor %}
+</urlset>
