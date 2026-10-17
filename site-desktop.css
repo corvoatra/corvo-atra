@@ -182,3 +182,13 @@ header.wrap nav a[aria-current="page"] {color:#d83a3a !important;}
   header.wrap .wordmark {position:static !important;transform:none !important;width:58px !important;flex:0 0 auto !important;margin:0 auto !important;}
   header.wrap nav {font-size:.84rem !important;gap:7px 15px !important;}
 }
+
+/* Ritmo vertical padronizado entre o menu fixo e o conteúdo de cada página. */
+:root{--site-content-offset:36px}
+main.wrap{padding-top:var(--site-content-offset) !important}
+main.wrap.author-page{padding-top:var(--site-content-offset) !important}
+main.wrap>.works-group:first-child{margin-top:0 !important;padding-top:0 !important;border-top:0 !important}
+body>main:not(.wrap)>.featured:first-child{padding-top:var(--site-content-offset) !important}
+@media(max-width:768px){
+  :root{--site-content-offset:24px}
+}
