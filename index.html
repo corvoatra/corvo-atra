@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -79,12 +82,49 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .home-book-grid .book-card .eyebrow {margin:0 0 9px;}
 .home-book-grid .volume-button {text-decoration:none;}
 @media(max-width:560px) {.home-book-grid {grid-template-columns:minmax(220px,260px);}}
+
+/* Últimas postagens do blog */
+.home-posts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:34px auto 28px;text-align:left}
+.home-post-card{border:1px solid #343434;background:#0c0c0c;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.home-post-cover{display:block;aspect-ratio:16/10;background:#151515;overflow:hidden}
+.home-post-cover img{display:block;width:100%;height:100%;object-fit:cover}
+.home-post-content{padding:22px;display:flex;flex-direction:column;flex:1}
+.home-post-content .eyebrow{margin-bottom:10px;letter-spacing:.12em}
+.home-post-content h3{font-size:1.35rem;line-height:1.3;font-weight:normal;margin:0 0 12px}
+.home-post-content h3 a:hover,.home-post-read:hover{text-decoration:underline}
+.home-post-content .home-post-excerpt{font-size:.93rem;color:var(--muted);margin:0 0 20px}
+.home-post-read{font:.75rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:auto}
+.home-posts-more{margin:0 auto}
+@media(max-width:760px){.home-posts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.home-posts-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
 <header class="wrap"><a aria-label="Corvo Atra — início" class="wordmark" href="index.html"><img alt="Corvo Atra" src="assets/imagens/logo-corvo-atra.png"/></a><nav aria-label="Navegação principal"><a aria-current="page" href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav></header>
 <hr class="rule"/>
 <main>
 <section class="featured home-books" id="destaques"><div class="wrap"><p class="eyebrow">Seleção Corvo Atra</p><h2 class="section-title">Livros em destaque</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Assinatura Instantânea" class="book-cover" href="livro-assinatura-instantanea.html"><img alt="Capa do livro Assinatura Instantânea" src="assets/imagens/capa-assinatura-instantanea.png"/></a><p class="eyebrow">Volume único</p><h3>Assinatura Instantânea</h3><a class="volume-button" href="livro-assinatura-instantanea.html">Ver livro</a></article><article class="book-card"><a aria-label="Conhecer Os Lucidentes" class="book-cover" href="livro-os-lucidentes.html"><img alt="Capa do livro Os Lucidentes" src="assets/imagens/capa-os-lucidentes.png"/></a><p class="eyebrow">Guardiões do Véu · Volume 1</p><h3>Os Lucidentes</h3><a class="volume-button" href="livro-os-lucidentes.html">Ver livro</a></article></div></div></section>
+
+<section class="wrap" id="ultimas-postagens">
+<p class="eyebrow">Do blog</p>
+<h2 class="section-title">Últimas postagens</h2>
+<p class="section-copy">Contos, novidades e reflexões do universo Corvo Atra.</p>
+<div class="home-posts-grid">
+{% for post in site.posts limit:3 %}
+<article class="home-post-card">
+{% if post.image %}<a class="home-post-cover" href="{{ post.url | relative_url }}"><img loading="lazy" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}"/></a>{% endif %}
+<div class="home-post-content">
+<p class="eyebrow">{{ post.date | date: "%d/%m/%Y" }}{% if post.category %} · {{ post.category | escape }}{% endif %}</p>
+<h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+<p class="home-post-excerpt">{{ post.content | strip_html | normalize_whitespace | truncatewords: 32 }}</p>
+<a class="home-post-read" href="{{ post.url | relative_url }}">Ler postagem →</a>
+</div>
+</article>
+{% else %}
+<p class="section-copy">Em breve, novas histórias por aqui.</p>
+{% endfor %}
+</div>
+<a class="button home-posts-more" href="{{ '/blog/' | relative_url }}">Ver todas as postagens →</a>
+</section>
 <section class="wrap" id="sobre">
 <div aria-hidden="true" class="about-mark">✦</div>
 <p class="eyebrow">Nossa identidade</p>
