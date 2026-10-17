@@ -2,7 +2,7 @@
 title: A Vela de Osso
 date: 2026-10-17
 category: Contos
-image: /corvo-atra/assets/imagens/blog/43334bf2d656036e1d443c91285c852fdb6ec7mv2.jpg
+image: /assets/imagens/blog/43334bf2d656036e1d443c91285c852fdb6ec7mv2-1.jpg
 ---
 Nas noites sem lua em que o vento sopra do lado do cemitério de São Bento, os velhos das redondezas dizem para fechar bem as frestas das janelas. Dizem que a curiosidade é uma das piores armadilhas, mas Jerônimo nunca foi homem de dar ouvidos às vozes do vilarejo.
 
