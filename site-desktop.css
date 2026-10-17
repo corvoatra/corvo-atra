@@ -118,3 +118,13 @@ header.wrap {
   header.wrap .wordmark {width:min(115px,30vw) !important;margin:0 auto 3px !important;}
   header.wrap nav {padding:7px 0 8px !important;}
 }
+
+/* Novo símbolo: metade do tamanho anterior no cabeçalho. */
+@media (min-width:769px) {
+  header.wrap .wordmark {width:49px !important;flex-basis:49px !important;}
+  header.wrap .wordmark img {display:block;width:100%;height:auto;}
+}
+@media (max-width:768px) {
+  header.wrap .wordmark {width:min(58px,15vw) !important;}
+  header.wrap .wordmark img {display:block;width:100%;height:auto;}
+}
