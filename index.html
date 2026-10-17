@@ -73,18 +73,18 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 </style>
 <link href="site-desktop.css" rel="stylesheet"/><style>
 /* Seções da página inicial: capas originais, sem recortes. */
-.home-book-grid {display:grid;grid-template-columns:minmax(220px,260px);justify-content:center;margin:34px auto 0;}
+.home-book-grid {display:grid;grid-template-columns:repeat(2,minmax(220px,260px));justify-content:center;gap:22px;margin:34px auto 0;}
 .home-book-grid .book-cover {display:block;max-width:170px;padding:0;border:0;background:none;overflow:hidden;}
 .home-book-grid .book-cover img {display:block;width:100%;height:100%;object-fit:contain;}
 .home-book-grid .book-card .eyebrow {margin:0 0 9px;}
 .home-book-grid .volume-button {text-decoration:none;}
-@media(min-width:769px) {.home-book-grid {grid-template-columns:minmax(220px,260px);}}
+@media(max-width:560px) {.home-book-grid {grid-template-columns:minmax(220px,260px);}}
 </style></head>
 <body>
 <header class="wrap"><a aria-label="Corvo Atra — início" class="wordmark" href="index.html"><img alt="Corvo Atra" src="assets/imagens/logo-corvo-atra.png"/></a><nav aria-label="Navegação principal"><a aria-current="page" href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav></header>
 <hr class="rule"/>
 <main>
-<section class="featured home-books" id="lancamentos"><div class="wrap"><p class="eyebrow">Novidades do selo</p><h2 class="section-title">Lançamentos</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Assinatura Instantânea" class="book-cover" href="livro-assinatura-instantanea.html"><img alt="Capa do livro Assinatura Instantânea" src="assets/imagens/capa-assinatura-instantanea.png"/></a><p class="eyebrow">Volume único</p><h3>Assinatura Instantânea</h3><a class="volume-button" href="livro-assinatura-instantanea.html">Ver livro</a></article></div></div></section><section class="home-books" id="destaques"><div class="wrap"><p class="eyebrow">Seleção Corvo Atra</p><h2 class="section-title">Livros em destaque</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Os Lucidentes" class="book-cover" href="livro-os-lucidentes.html"><img alt="Capa do livro Os Lucidentes" src="assets/imagens/capa-os-lucidentes.png"/></a><p class="eyebrow">Guardiões do Véu · Volume 1</p><h3>Os Lucidentes</h3><a class="volume-button" href="livro-os-lucidentes.html">Ver livro</a></article></div></div></section>
+<section class="featured home-books" id="destaques"><div class="wrap"><p class="eyebrow">Seleção Corvo Atra</p><h2 class="section-title">Livros em destaque</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Assinatura Instantânea" class="book-cover" href="livro-assinatura-instantanea.html"><img alt="Capa do livro Assinatura Instantânea" src="assets/imagens/capa-assinatura-instantanea.png"/></a><p class="eyebrow">Volume único</p><h3>Assinatura Instantânea</h3><a class="volume-button" href="livro-assinatura-instantanea.html">Ver livro</a></article><article class="book-card"><a aria-label="Conhecer Os Lucidentes" class="book-cover" href="livro-os-lucidentes.html"><img alt="Capa do livro Os Lucidentes" src="assets/imagens/capa-os-lucidentes.png"/></a><p class="eyebrow">Guardiões do Véu · Volume 1</p><h3>Os Lucidentes</h3><a class="volume-button" href="livro-os-lucidentes.html">Ver livro</a></article></div></div></section>
 <section class="wrap" id="sobre">
 <div aria-hidden="true" class="about-mark">✦</div>
 <p class="eyebrow">Nossa identidade</p>
