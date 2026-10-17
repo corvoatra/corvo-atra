@@ -28,7 +28,7 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .blog-pagination a,.blog-pagination span{display:inline-flex;min-width:42px;min-height:42px;padding:10px 14px;align-items:center;justify-content:center;border:1px solid #444;font-size:.82rem;color:#eee;text-decoration:none}
 .blog-pagination a:hover,.blog-pagination a:focus-visible{border-color:#eee;background:#181818}
 .blog-pagination [aria-current="page"]{background:#eee;color:#080808;border-color:#eee}
-</style><link href="../site-desktop.css?v=shared-header-6" rel="stylesheet"/>{% include pwa-head.html %}</head><body>{% include site-header.html %}<hr/><main class="wrap"><p class="eyebrow">Diário do autor</p><h1>Blog</h1><p class="lead">Novidades, reflexões e bastidores dos livros e da escrita de Magnus Silva.</p>
+</style><link href="../site-desktop.css?v=shared-header-6" rel="stylesheet"/></head><body>{% include site-header.html %}<hr/><main class="wrap"><p class="eyebrow">Diário do autor</p><h1>Blog</h1><p class="lead">Novidades, reflexões e bastidores dos livros e da escrita de Magnus Silva.</p>
 <div class="blog-list" id="blog-list">
 {% assign posts_ordenados = site.posts | sort: 'date' | reverse %}
 {% for post in posts_ordenados %}
@@ -63,4 +63,4 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
   if(page<totalPages)link(page+1,'Próxima →');
   pagination.hidden=false;
 })();
-</script>{% include pwa-register.html %}</body></html>
+</script></body></html>
