@@ -24,7 +24,7 @@ header nav { display:flex; justify-content:center; align-items:center; flex-wrap
 header nav a { color:#d0d0d0; transition:color .2s; }
 header nav a:hover,header nav a:focus-visible { color:#fff; }
 @media(max-width:480px) { header nav { column-gap:18px; row-gap:10px; font-size:.73rem; } }
-</style><link href="site-desktop.css?v=shared-header-6" rel="stylesheet"/><link href="livros-layout.css" rel="stylesheet"/></head>
+</style><link href="site-desktop.css?v=shared-header-6" rel="stylesheet"/><link href="livros-layout.css" rel="stylesheet"/><link rel="manifest" href="/corvo-atra/manifest.webmanifest"/><link rel="icon" type="image/svg+xml" href="/corvo-atra/assets/imagens/logo-corvo-perfil.svg"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Corvo Atra"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/></head>
 <body>
 {% include site-header.html %}<hr/>
 <main class="wrap"><a class="back" href="obras.html">← Voltar para a página inicial</a><div class="book-layout book-detail-layout">
@@ -44,4 +44,4 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 <script>
 (()=>{const open=document.getElementById('open-sample'),modal=document.getElementById('sample-modal'),close=document.getElementById('close-sample'),frame=document.getElementById('sample-frame');let previous=null;function hide(){modal.hidden=true;frame.removeAttribute('src');document.body.style.overflow='';previous?.focus()}open.addEventListener('click',e=>{e.preventDefault();previous=document.activeElement;frame.src=open.getAttribute('href')+'#toolbar=1&navpanes=0';modal.hidden=false;document.body.style.overflow='hidden';close.focus()});close.addEventListener('click',hide);modal.addEventListener('click',e=>{if(e.target===modal)hide()});document.addEventListener('keydown',e=>{if(!modal.hidden&&e.key==='Escape')hide();if(!modal.hidden&&e.key==='Tab'){const els=[...modal.querySelectorAll('a,button')];if(e.shiftKey&&document.activeElement===els[0]){e.preventDefault();els[els.length-1].focus()}else if(!e.shiftKey&&document.activeElement===els[els.length-1]){e.preventDefault();els[0].focus()}}})})();
 </script>
-</body></html>
+<script>(function(){if(!('serviceWorker' in navigator))return;window.addEventListener('load',function(){navigator.serviceWorker.register('/corvo-atra/service-worker.js',{scope:'/corvo-atra/'}).catch(function(err){console.warn('Instalação do aplicativo indisponível:',err);});});})();</script></body></html>
