@@ -98,3 +98,23 @@ header.wrap nav a[aria-current="page"] {
   header.wrap nav {justify-content:center;font-size:.86rem !important;}
   header.wrap nav a[aria-current="page"] {border-bottom:1px solid #d83a3a;padding-bottom:5px;}
 }
+
+/* Cabeçalho compacto que acompanha a rolagem. */
+header.wrap {
+  position:sticky !important;
+  top:0;
+  z-index:1000;
+  background:rgba(5,5,5,.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid #292929;
+}
+@media (min-width:769px) {
+  header.wrap {min-height:70px;padding:10px 0 !important;}
+  header.wrap .wordmark {width:98px !important;flex-basis:98px !important;}
+}
+@media (max-width:768px) {
+  header.wrap {padding:8px 0 6px !important;}
+  header.wrap .wordmark {width:min(115px,30vw) !important;margin:0 auto 3px !important;}
+  header.wrap nav {padding:7px 0 8px !important;}
+}
