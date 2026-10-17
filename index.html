@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#050505" name="theme-color"/>
+<meta content="Conheça o Corvo Atra, selo literário que reúne histórias, livros e universos para descobrir." name="description"/>
+<title>Corvo Atra — Selo Literário</title>
+<style>
+    :root { color-scheme: dark; --bg:#050505; --panel:#101010; --text:#f5f5f5; --muted:#b8b8b8; --line:#292929; --accent:#d8d8d8; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: Georgia, 'Times New Roman', serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1100px, calc(100% - 40px)); margin-inline:auto; }
+    header { text-align:center; padding:20px 0 0; }
+    .wordmark { display:block; width:min(190px, 42vw); margin:4px auto 10px; line-height:0; }
+    .wordmark img { display:block; width:100%; height:auto; object-fit:contain; }
+    nav { display:flex; justify-content:center; flex-wrap:wrap; gap:clamp(18px, 4vw, 42px); padding:15px 0 22px; font-family:Arial,sans-serif; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; }
+    nav a { color:#d0d0d0; transition:color .2s; }
+    nav a:hover, nav a:focus { color:white; }
+    .rule { border:0; border-top:1px solid var(--line); margin:0; }
+    .hero { min-height:490px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:88px 0 96px; }
+    .eyebrow { font: .72rem/1.5 Arial,sans-serif; letter-spacing:.24em; text-transform:uppercase; color:#aaa; margin:0 0 20px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(2.4rem, 6vw, 5rem); line-height:1.08; font-weight:normal; max-width:850px; margin:0 auto 24px; text-wrap:balance; }
+    .intro { max-width:620px; color:var(--muted); font-size:clamp(1rem, 2vw, 1.15rem); margin:0 auto 30px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:12px 24px; border:1px solid #e8e8e8; font: .78rem Arial,sans-serif; letter-spacing:.1em; text-transform:uppercase; transition:background .2s,color .2s; }
+    .button:hover,.button:focus { background:#f5f5f5; color:#080808; }
+    section { padding:76px 0; text-align:center; }
+    .section-title { font-size:clamp(1.8rem,4vw,3rem); font-weight:normal; margin:0 auto 14px; }
+    .section-copy { max-width:620px; margin:0 auto; color:var(--muted); }
+    .featured { background:var(--panel); border-block:1px solid var(--line); }
+    .carousel-shell { position:relative; margin:38px auto 0; }
+    .book-carousel { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(210px, 260px); gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding:8px 3px 22px; scrollbar-color:#555 #151515; }
+    .book-card { scroll-snap-align:center; text-align:center; border:1px solid #333; background:#0a0a0a; padding:22px 18px; min-width:0; }
+    .book-cover { width:100%; max-width:170px; aspect-ratio:148/210; margin:0 auto 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:16px; border:1px solid #555; background:radial-gradient(ellipse at 50% 35%,#303030 0%,#171717 48%,#080808 100%); color:#dedede; }
+    .book-cover img { display:block; width:100%; height:100%; object-fit:contain; }
+    .book-cover strong { font-size:1.1rem; line-height:1.3; font-weight:normal; letter-spacing:.06em; }
+    .book-cover span { font: .65rem Arial,sans-serif; text-transform:uppercase; letter-spacing:.16em; color:#aaa; }
+    .book-card h3 { font-size:1.25rem; font-weight:normal; margin:0 0 8px; }
+    .book-card p { color:var(--muted); font-size:.9rem; margin:0; }
+    .coming-soon { display:inline-block; border:1px solid #777; padding:5px 10px; color:#f5f5f5; font: .68rem Arial,sans-serif; letter-spacing:.14em; text-transform:uppercase; }
+    .volume-button { display:flex; width:max-content; margin:18px auto 0; justify-content:center; align-items:center; min-height:46px; padding:12px 26px; border:1px solid #f5f5f5; color:#050505; background:#f5f5f5; font: .78rem Arial,sans-serif; font-weight:700; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:background .2s,color .2s; }
+    .volume-button:hover,.volume-button:focus { background:transparent; color:#f5f5f5; }
+    .single-books { margin:64px auto 0; padding-top:42px; border-top:1px solid var(--line); }
+    .single-books-title { font-size:1.7rem; font-weight:normal; margin:0 0 12px; }
+    .single-books-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,260px)); justify-content:center; gap:22px; margin:30px auto 0; }
+    .carousel-controls { display:flex; justify-content:center; align-items:center; gap:14px; margin-top:10px; }
+    .carousel-controls button { width:44px; height:44px; border:1px solid #555; background:transparent; color:#f5f5f5; font-size:1.25rem; cursor:pointer; }
+    .carousel-controls button:hover,.carousel-controls button:focus { background:#f5f5f5; color:#080808; }
+    .carousel-hint { font: .72rem Arial,sans-serif; color:#999; letter-spacing:.05em; }
+    .about-mark { font-size:2rem; margin-bottom:12px; }
+    footer { text-align:center; border-top:1px solid var(--line); padding:34px 20px 40px; color:var(--muted); font: .78rem Arial,sans-serif; }
+    footer .brand { font:1.15rem Georgia,serif; letter-spacing:.2em; color:#f3f3f3; margin-bottom:10px; }
+    footer .links { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin:18px 0; }
+    @media (max-width:600px) { .wrap{width:calc(100% - 28px)} .wordmark{width:min(150px, 38vw)} nav{gap:16px;font-size:.72rem} .hero{min-height:420px;padding:70px 0} section{padding:60px 0} .book-carousel{grid-auto-columns:minmax(210px,78%);gap:14px} .book-card{padding:18px 14px} }
+  
+    /* Capas oficiais: preencher todo o cartão mantendo a proporção original. */
+    .book-cover:has(> img) { padding:0; border:0; overflow:hidden; background:#050505; display:block; }
+    .book-cover:has(> img) img { width:100%; height:100%; object-fit:cover; }
+
+/* Cabeçalho compartilhado — Corvo Atra */
+header.wrap { width:min(1100px,calc(100% - 40px)); margin-inline:auto; text-align:center; padding:20px 0 0; }
+header .wordmark { display:block; width:min(190px,42vw); margin:4px auto 10px; line-height:0; }
+header .wordmark img { display:block; width:100%; height:auto; object-fit:contain; }
+header .wordmark:hover,header .wordmark:focus-visible { opacity:.85; }
+header nav { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:clamp(18px,4vw,42px); padding:15px 0 22px; font-family:Arial,sans-serif; font-size:.82rem; font-weight:normal; letter-spacing:.12em; text-transform:uppercase; }
+header nav a { color:#d0d0d0; transition:color .2s; }
+header nav a:hover,header nav a:focus-visible { color:#fff; }
+@media(max-width:480px) { header nav { column-gap:18px; row-gap:10px; font-size:.73rem; } }
+</style>
+<link href="site-desktop.css" rel="stylesheet"/><style>
+/* Seções da página inicial: capas originais, sem recortes. */
+.home-book-grid {display:grid;grid-template-columns:minmax(220px,260px);justify-content:center;margin:34px auto 0;}
+.home-book-grid .book-cover {display:block;max-width:170px;padding:0;border:0;background:none;overflow:hidden;}
+.home-book-grid .book-cover img {display:block;width:100%;height:100%;object-fit:contain;}
+.home-book-grid .book-card .eyebrow {margin:0 0 9px;}
+.home-book-grid .volume-button {text-decoration:none;}
+@media(min-width:769px) {.home-book-grid {grid-template-columns:minmax(220px,260px);}}
+</style></head>
+<body>
+<header class="wrap"><a aria-label="Corvo Atra — início" class="wordmark" href="index.html"><img alt="Corvo Atra" src="assets/imagens/logo-corvo-atra.png"/></a><nav aria-label="Navegação principal"><a aria-current="page" href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav></header>
+<hr class="rule"/>
+<main>
+<section class="featured home-books" id="lancamentos"><div class="wrap"><p class="eyebrow">Novidades do selo</p><h2 class="section-title">Lançamentos</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Assinatura Instantânea" class="book-cover" href="livro-assinatura-instantanea.html"><img alt="Capa do livro Assinatura Instantânea" src="assets/imagens/capa-assinatura-instantanea.png"/></a><p class="eyebrow">Volume único</p><h3>Assinatura Instantânea</h3><a class="volume-button" href="livro-assinatura-instantanea.html">Ver livro</a></article></div></div></section><section class="home-books" id="destaques"><div class="wrap"><p class="eyebrow">Seleção Corvo Atra</p><h2 class="section-title">Livros em destaque</h2><div class="home-book-grid"><article class="book-card"><a aria-label="Conhecer Os Lucidentes" class="book-cover" href="livro-os-lucidentes.html"><img alt="Capa do livro Os Lucidentes" src="assets/imagens/capa-os-lucidentes.png"/></a><p class="eyebrow">Guardiões do Véu · Volume 1</p><h3>Os Lucidentes</h3><a class="volume-button" href="livro-os-lucidentes.html">Ver livro</a></article></div></div></section>
+<section class="wrap" id="sobre">
+<div aria-hidden="true" class="about-mark">✦</div>
+<p class="eyebrow">Nossa identidade</p>
+<h2 class="section-title">Um selo. Muitos mundos.</h2>
+<p class="section-copy">O Corvo Atra reúne obras e universos literários sob uma identidade própria, valorizando a imaginação, a narrativa e a experiência de cada leitor.</p>
+</section>
+</main>
+<footer id="contato"><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="index.html">Início</a><a href="obras.html">Obras</a><a href="autor.html">Sobre o autor</a><a href="blog/">Blog</a><a href="contato.html">Contato</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer>
+</body>
+</html>

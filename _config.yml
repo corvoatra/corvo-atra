@@ -1,0 +1,11 @@
+title: Corvo Atra
+description: Site oficial de Magnus Silva e seus livros.
+lang: pt-BR
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+future: false
+exclude:
+  - README-BLOG.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
