@@ -21,14 +21,45 @@ header nav a { color:#d0d0d0; transition:color .2s; }
 header nav a:hover,header nav a:focus-visible { color:#fff; }
 @media(max-width:480px) { header nav { column-gap:18px; row-gap:10px; font-size:.73rem; } }
 
-.blog-list{display:grid;gap:22px;margin-top:38px}.blog-card{display:grid;grid-template-columns:minmax(0,220px) 1fr;border:1px solid #343434;background:#0c0c0c;overflow:hidden}.blog-card:not(:has(img)){grid-template-columns:1fr}.blog-card-image{width:100%;height:100%;min-height:180px;object-fit:cover;display:block}.blog-card-body{padding:26px}.blog-card h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.25;margin:0 0 12px}.blog-card h2 a:hover,.read-more:hover{text-decoration:underline}.blog-card p{margin:0 0 15px}.read-more{font:.77rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff}.blog-empty{border:1px solid #343434;padding:32px}.blog-empty h2{margin-top:0}@media(max-width:650px){.blog-card{grid-template-columns:1fr}.blog-card-image{height:210px;min-height:0}}
+.blog-list{display:grid;gap:22px;margin-top:38px}.blog-card[hidden]{display:none}.blog-card{display:grid;grid-template-columns:minmax(0,220px) 1fr;border:1px solid #343434;background:#0c0c0c;overflow:hidden}.blog-card:not(:has(img)){grid-template-columns:1fr}.blog-card-image{width:100%;height:100%;min-height:180px;object-fit:cover;display:block}.blog-card-body{padding:26px}.blog-card h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.25;margin:0 0 12px}.blog-card h2 a:hover,.read-more:hover{text-decoration:underline}.blog-card p{margin:0 0 15px}.read-more{font:.77rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff}.blog-empty{border:1px solid #343434;padding:32px}.blog-empty h2{margin-top:0}@media(max-width:650px){.blog-card{grid-template-columns:1fr}.blog-card-image{height:210px;min-height:0}}
+
+.blog-pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:34px;font-family:Arial,sans-serif}
+.blog-pagination[hidden]{display:none}
+.blog-pagination a,.blog-pagination span{display:inline-flex;min-width:42px;min-height:42px;padding:10px 14px;align-items:center;justify-content:center;border:1px solid #444;font-size:.82rem;color:#eee;text-decoration:none}
+.blog-pagination a:hover,.blog-pagination a:focus-visible{border-color:#eee;background:#181818}
+.blog-pagination [aria-current="page"]{background:#eee;color:#080808;border-color:#eee}
 </style><link href="../site-desktop.css" rel="stylesheet"/></head><body><header class="wrap"><a aria-label="Corvo Atra — início" class="wordmark" href="../index.html"><img alt="Corvo Atra" src="../assets/imagens/logo-corvo-atra.png"/></a><nav aria-label="Navegação principal"><a href="../index.html">Início</a><a href="../obras.html">Obras</a><a href="../autor.html">Sobre o autor</a><a aria-current="page" href="./">Blog</a><a href="../contato.html">Contato</a></nav></header><hr/><main class="wrap"><p class="eyebrow">Diário do autor</p><h1>Blog</h1><p class="lead">Novidades, reflexões e bastidores dos livros e da escrita de Magnus Silva.</p>
-<div class="blog-list">
+<div class="blog-list" id="blog-list">
 {% for post in site.posts %}
-<article class="blog-card">
+<article class="blog-card" data-blog-post>
 {% if post.image %}<a href="{{ post.url | relative_url }}"><img alt="{{ post.image_alt | default: post.title | escape }}" class="blog-card-image" loading="lazy" src="{{ post.image | relative_url }}"/></a>{% endif %}
 <div class="blog-card-body"><p class="eyebrow">{{ post.date | date: "%d/%m/%Y" }}{% if post.category %} · {{ post.category }}{% endif %}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2><p>{{ post.description | default: post.excerpt | strip_html | truncate: 200 }}</p><a class="read-more" href="{{ post.url | relative_url }}">Ler artigo →</a></div>
 </article>
 {% else %}<div class="blog-empty"><h2>Em breve, novas histórias por aqui.</h2><p>Este espaço está preparado para receber as primeiras publicações.</p></div>
 {% endfor %}
-</div></main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="../index.html">Início</a><a href="../obras.html">Obras</a><a href="../autor.html">Sobre o autor</a><a href="./">Blog</a><a href="../contato.html">Contato</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer></body></html>
+</div>
+<nav class="blog-pagination" id="blog-pagination" aria-label="Páginas do blog" hidden></nav>
+</main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="../index.html">Início</a><a href="../obras.html">Obras</a><a href="../autor.html">Sobre o autor</a><a href="./">Blog</a><a href="../contato.html">Contato</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer><script>
+(function(){
+  const perPage=10;
+  const posts=Array.from(document.querySelectorAll('[data-blog-post]'));
+  const pagination=document.getElementById('blog-pagination');
+  const totalPages=Math.ceil(posts.length/perPage);
+  if(totalPages<=1)return;
+  const params=new URLSearchParams(window.location.search);
+  const requested=Number(params.get('pagina'));
+  const page=Number.isInteger(requested)&&requested>=1?Math.min(requested,totalPages):1;
+  posts.forEach((post,index)=>{post.hidden=index<(page-1)*perPage||index>=page*perPage;});
+  const link=(target,label,current=false)=>{
+    const el=document.createElement(current?'span':'a');
+    el.textContent=label;
+    if(current)el.setAttribute('aria-current','page');
+    else {const query=new URLSearchParams(window.location.search);if(target===1)query.delete('pagina');else query.set('pagina',String(target));el.href=window.location.pathname+(query.toString()?'?'+query:'')+'#blog-list';}
+    pagination.appendChild(el);
+  };
+  if(page>1)link(page-1,'← Anterior');
+  for(let i=1;i<=totalPages;i++)link(i,String(i),i===page);
+  if(page<totalPages)link(page+1,'Próxima →');
+  pagination.hidden=false;
+})();
+</script></body></html>
