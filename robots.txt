@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corvoatra.github.io/corvo-atra/sitemap.xml
