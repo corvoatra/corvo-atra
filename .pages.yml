@@ -10,7 +10,7 @@ media:
   - name: arquivos
     label: PDFs e downloads
     input: assets/downloads
-    output: /corvo-atra/assets/downloads
+    output: /assets/downloads
     categories: [document, compressed]
     rename: safe
 
