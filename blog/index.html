@@ -29,40 +29,31 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .blog-pagination a:hover,.blog-pagination a:focus-visible{border-color:#eee;background:#181818}
 .blog-pagination [aria-current="page"]{background:#eee;color:#080808;border-color:#eee}
 
-/* Filtro compacto acima das postagens; sem coluna lateral. */
-.blog-category-bar{display:flex;align-items:center;margin:0 0 24px;position:relative;z-index:2}
-.blog-category-menu{position:relative;display:inline-block}
-.blog-category-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;justify-content:space-between;min-width:190px;padding:12px 16px;border:1px solid #3b3b3b;background:#101010;color:#f2f2f2;font:.83rem Arial,sans-serif;letter-spacing:.07em}
-.blog-category-menu summary::-webkit-details-marker{display:none}
-.blog-category-menu summary::after{content:"⌄";font-size:1.1rem;line-height:1}
-.blog-category-menu[open] summary,.blog-category-menu summary:hover{border-color:#777}
-.blog-category-options{position:absolute;left:0;top:100%;width:100%;background:#101010;border:1px solid #3b3b3b;border-top:0;box-shadow:0 12px 24px #0009;z-index:5}
-.blog-category-options a{display:block;padding:12px 16px;font:.83rem Arial,sans-serif;color:#ddd;text-decoration:none}
-.blog-category-options a:hover,.blog-category-options a:focus-visible{background:#202020;color:#fff}
+/* Navegação horizontal do blog: todos os posts e dropdown Meus textos. */
+.blog-category-bar{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin:0 0 26px;padding-bottom:12px;border-bottom:1px solid #292929;position:relative;z-index:3}
+.blog-category-bar>a,.blog-category-menu>summary{display:inline-flex;align-items:center;gap:8px;min-height:38px;color:#d4d4d4;text-decoration:none;font:.83rem Arial,sans-serif;letter-spacing:.08em}
+.blog-category-bar>a:hover,.blog-category-menu>summary:hover,.blog-category-bar>a[aria-current="true"],.blog-category-menu:has(a[aria-current="true"])>summary{color:#e05252}
+.blog-category-menu{position:relative}
+.blog-category-menu>summary{cursor:pointer;list-style:none}
+.blog-category-menu>summary::-webkit-details-marker{display:none}
+.blog-category-menu>summary::after{content:"⌄";font-size:1.1rem;line-height:1}
+.blog-category-options{position:absolute;top:100%;left:0;min-width:175px;border:1px solid #383838;background:#101010;box-shadow:0 12px 24px #0009}
+.blog-category-options a{display:block;padding:12px 16px;color:#ddd;text-decoration:none;font:.83rem Arial,sans-serif}
+.blog-category-options a:hover,.blog-category-options a:focus-visible{background:#222;color:#fff}
 .blog-category-options a[aria-current="true"]{color:#e05252}
-.blog-subcategory-menu{border-top:1px solid #292929}
-.blog-subcategory-menu>summary{border:0;background:transparent;min-width:0;padding:12px 16px;color:#ddd;letter-spacing:0;font:.83rem Arial,sans-serif}
-.blog-subcategory-menu>summary:hover,.blog-subcategory-menu[open]>summary{color:#fff;background:#202020}
-.blog-subcategory-options a{padding-left:30px}
-
 .blog-list{margin-top:0}
 .blog-filter-empty{border:1px solid #343434;padding:28px;color:#ccc}
 .blog-filter-empty[hidden]{display:none}
 </style><link href="../site-desktop.css?v=shared-header-6" rel="stylesheet"/></head><body>{% include site-header.html %}<hr/><main class="wrap">
-<div class="blog-category-bar">
-<details class="blog-category-menu">
-<summary>Categorias</summary>
-<nav class="blog-category-options" aria-label="Filtros das postagens">
+<nav class="blog-category-bar" aria-label="Navegação das postagens">
 <a href="./#blog-list" data-category-filter="todos">Todos os posts</a>
-<details class="blog-subcategory-menu">
+<details class="blog-category-menu">
 <summary>Meus textos</summary>
-<div class="blog-subcategory-options">
+<div class="blog-category-options">
 <a href="?categoria=contos#blog-list" data-category-filter="contos">Contos</a>
 </div>
 </details>
 </nav>
-</details>
-</div>
 <div class="blog-list" id="blog-list">
 {% assign posts_ordenados = site.posts | sort: 'date' | reverse %}
 {% for post in posts_ordenados %}
