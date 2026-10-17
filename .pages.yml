@@ -3,7 +3,7 @@ media:
   - name: imagens
     label: Imagens
     input: assets/imagens/blog
-    output: /corvo-atra/assets/imagens/blog
+    output: /assets/imagens/blog
     categories: [image]
     rename: safe
 
