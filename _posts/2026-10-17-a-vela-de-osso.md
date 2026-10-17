@@ -1,13 +1,6 @@
 ---
 title: A Vela de Osso
 date: 2026-10-17
-description: Nas noites sem lua, os moradores de um pequeno vilarejo evitam
-  olhar pelas janelas quando o vento sopra do cemitério de São Bento. Mas
-  Jerônimo, movido pela curiosidade, ignora os antigos avisos e testemunha a
-  passagem da misteriosa Procissão das Almas. Ao receber um objeto de uma das
-  figuras encapuzadas, descobre que sua vida está ameaçada. Agora, antes que a
-  meia-noite volte a chegar, precisará encontrar uma maneira de escapar de uma
-  promessa feita aos mortos.
 category: Contos
 image: /corvo-atra/assets/imagens/blog/43334bf2d656036e1d443c91285c852fdb6ec7mv2.jpg
 ---
