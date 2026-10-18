@@ -75,6 +75,41 @@ body.reader-light{--reader-accent:#aa3030}
 .reader-progress{background:var(--reader-accent)}
 .reader-contents a:hover,.reader-bottom a:hover,.reader-topline a:hover{color:var(--reader-accent)}
 .reader-tools button[aria-pressed=true]{color:var(--reader-accent)}
+/* Refinamento mobile do leitor — somente telas pequenas */
+@media(max-width:600px){
+ main.wrap{width:100%;padding-left:0;padding-right:0}
+ .reader-shell{width:100%;max-width:none;margin:0 auto 38px;padding:0 0 24px;border-left:0;border-right:0}
+ .reader-topline{padding:15px 17px;gap:8px;font-size:.61rem;letter-spacing:.075em}
+ .reader-topline span:nth-child(2){display:none}
+ .reader-heading{padding:31px 20px 20px}
+ .reader-heading h1{font-size:clamp(2rem,8.5vw,3rem);line-height:1.17;overflow-wrap:break-word;hyphens:auto}
+ .reader-heading .eyebrow{font-size:.68rem;line-height:1.6}
+ .reader-heading .lead{font-size:1rem;line-height:1.65}
+ .reader-cover{width:100%;max-height:320px;aspect-ratio:16/10;object-fit:cover;margin:0 auto 20px;border-radius:0}
+ .reader-toolbar{position:relative;top:auto;z-index:1;margin:12px 14px 0;padding:13px;border-radius:9px;gap:11px}
+ .reader-toolbar-label{width:auto;font-size:.68rem}
+ .reader-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%;gap:7px}
+ .reader-tools button{min-width:0;padding:10px 4px;min-height:44px;font-size:.7rem;white-space:nowrap}
+ .reader-tools #reader-copy{grid-column:1/-1;font-size:.75rem}
+ .reader-contents{margin:12px 14px 0;border-radius:8px}
+ .reader-body{margin:0 14px;padding:26px 20px 32px;border-radius:0 0 9px 9px}
+ .reader-body .post-content{line-height:1.83;overflow-wrap:break-word;word-break:normal}
+ .reader-body .post-content p{margin-bottom:1.25em}
+ .reader-body .post-content h2{font-size:1.45rem;line-height:1.35}
+ .reader-body .post-content h3{font-size:1.22rem;line-height:1.4}
+ .reader-body .post-content img{margin:22px auto;max-width:100%}
+ .reader-body .post-content table{display:block;overflow-x:auto;max-width:100%}
+ .reader-body .post-content blockquote{margin:20px 0;padding-left:14px}
+ .reader-body .post-content iframe{height:min(65vh,480px)}
+ .reader-bottom{margin:20px 16px 0;gap:16px}
+ .reader-bottom button{min-height:44px}
+}
+@media(max-width:360px){
+ .reader-body{margin:0 8px;padding:22px 16px}
+ .reader-toolbar{margin-left:8px;margin-right:8px}
+ .reader-heading{padding-left:14px;padding-right:14px}
+ .reader-tools{gap:4px}
+}
 </style><link href="{{ '/site-desktop.css?v=espacamento-global-7' | relative_url }}" rel="stylesheet"/>{% include seo-head.html %}</head><body>{% include site-header.html %}<hr/><div class="reader-progress" id="reader-progress" aria-hidden="true"></div><main class="wrap"><article class="reader-shell" id="reader-article">
 <div class="reader-topline"><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a><span>CORVO ATRA / PUBLICAÇÕES</span><span id="reader-time">Leitura</span></div>
 <div class="reader-heading"><p class="eyebrow">{{ page.date | date: "%d/%m/%Y" }}{% if page.category %} · {{ page.category }}{% endif %}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}<div class="reader-rule"></div></div>
