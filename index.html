@@ -75,6 +75,17 @@ header nav { display:flex; justify-content:center; align-items:center; flex-wrap
 header nav a { color:#d0d0d0; transition:color .2s; }
 header nav a:hover,header nav a:focus-visible { color:#fff; }
 @media(max-width:480px) { header nav { column-gap:18px; row-gap:10px; font-size:.73rem; } }
+/* Últimas postagens: cartões mais legíveis no celular */
+@media(max-width:600px){
+ .home-posts-grid{grid-template-columns:1fr;gap:18px;margin-top:26px}
+ .home-post-card{border-radius:10px;border-color:#302929;background:#101010}
+ .home-post-cover{aspect-ratio:16/9}
+ .home-post-content{padding:20px 20px 22px}
+ .home-post-content .eyebrow{font-size:.69rem;color:#dc6767;line-height:1.5}
+ .home-post-content h3{font-size:clamp(1.45rem,6vw,1.8rem);line-height:1.24}
+ .home-post-content .home-post-excerpt{font-size:.96rem;line-height:1.7;color:#bcb6b6}
+ .home-post-read{color:#ed8989;font-size:.77rem;min-height:40px;display:inline-flex;align-items:center}
+}
 </style>
 <link href="site-desktop.css?v=espacamento-global-7" rel="stylesheet"/><style>
 /* Seções da página inicial: capas originais, sem recortes. */
