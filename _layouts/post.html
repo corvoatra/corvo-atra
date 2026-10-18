@@ -21,6 +21,7 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 
 .post{max-width:780px;margin:auto}.post .eyebrow a:hover{text-decoration:underline}.post h1{overflow-wrap:anywhere}.post-hero{display:block;width:100%;height:auto;max-height:440px;object-fit:cover;margin:32px 0}.post-content{font-size:1.12rem;line-height:1.9;color:#dedede;margin:42px 0}.post-content p{margin:0 0 1.35em}.post-content h2,.post-content h3{color:#f5f5f5;line-height:1.3;margin:1.8em 0 .65em}.post-content h2{font-size:1.75rem}.post-content h3{font-size:1.35rem}.post-content a{text-decoration:underline;text-underline-offset:3px}.post-content img{max-width:100%;height:auto}.post-content blockquote{border-left:2px solid #aaa;padding-left:22px;margin:28px 0;color:#c9c9c9}.post-content pre{max-width:100%;overflow:auto;padding:18px;background:#171717}.post-content ul,.post-content ol{padding-left:1.5em}.post-end{border-top:1px solid #333;padding-top:30px}
 
+/* BACKUP VISUAL: commit anterior ao ajuste de cores: 10c934f3d31d300d6b44254a55fecd88b2c7ef6c */
 /* Corvo Atra — leitor editorial */
 :root{--reader-bg:#0e0c0c;--reader-paper:#171414;--reader-ink:#e9e0d7;--reader-muted:#ad9f96;--reader-accent:#b99581}
 body.reader-sepia{--reader-bg:#e5d7bd;--reader-paper:#f5ebd7;--reader-ink:#352b25;--reader-muted:#6d5c50;--reader-accent:#87573c}
@@ -59,6 +60,21 @@ body.reader-light{--reader-bg:#ececec;--reader-paper:#fff;--reader-ink:#242424;-
 .reader-bottom a{color:var(--reader-ink);text-decoration:underline}
 @media(max-width:768px){.reader-progress{top:105px}.reader-toolbar{top:105px}.reader-shell{padding:0 12px 28px}.reader-heading{padding:35px 5px 20px}.reader-body{padding:28px 19px}.reader-toolbar{padding:12px}.reader-toolbar-label{width:100%}}
 @media(prefers-reduced-motion:reduce){.reader-progress{transition:none}}
+/* Acentos vermelhos discretos — reversível removendo este bloco */
+:root{--reader-accent:#dc6767}
+body.reader-sepia{--reader-accent:#a53b3b}
+body.reader-light{--reader-accent:#aa3030}
+.reader-heading h1{color:var(--reader-ink)}
+.reader-heading .eyebrow,.reader-toolbar-label{color:var(--reader-accent)}
+.reader-body .post-content h2{color:var(--reader-accent)}
+.reader-body .post-content h3{color:var(--reader-accent)}
+.reader-body .post-content a{color:var(--reader-accent);text-decoration-color:currentColor;text-underline-offset:4px}
+.reader-body .post-content a:hover,.reader-body .post-content a:focus-visible{filter:brightness(1.25)}
+.reader-body .post-content strong{color:var(--reader-ink)}
+.reader-rule{background:var(--reader-accent)}
+.reader-progress{background:var(--reader-accent)}
+.reader-contents a:hover,.reader-bottom a:hover,.reader-topline a:hover{color:var(--reader-accent)}
+.reader-tools button[aria-pressed=true]{color:var(--reader-accent)}
 </style><link href="{{ '/site-desktop.css?v=espacamento-global-7' | relative_url }}" rel="stylesheet"/>{% include seo-head.html %}</head><body>{% include site-header.html %}<hr/><div class="reader-progress" id="reader-progress" aria-hidden="true"></div><main class="wrap"><article class="reader-shell" id="reader-article">
 <div class="reader-topline"><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a><span>CORVO ATRA / PUBLICAÇÕES</span><span id="reader-time">Leitura</span></div>
 <div class="reader-heading"><p class="eyebrow">{{ page.date | date: "%d/%m/%Y" }}{% if page.category %} · {{ page.category }}{% endif %}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}<div class="reader-rule"></div></div>
