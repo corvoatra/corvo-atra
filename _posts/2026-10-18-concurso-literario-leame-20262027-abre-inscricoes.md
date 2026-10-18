@@ -1,6 +1,6 @@
 ---
 title: Concurso Literário LeaMe 2026/2027 abre inscrições
-date: 2026-10-18
+date: '2026-10-18T08:27'
 category: Concursos Literários
 image: /assets/imagens/blog/screenshot3.png
 ---
