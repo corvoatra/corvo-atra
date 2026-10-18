@@ -69,6 +69,7 @@ main.wrap{width:min(1140px,calc(100% - 40px))}
 <a href="?categoria=contos#blog-list" data-category-filter="contos">Contos</a>
 </div>
 </details>
+<a href="?categoria=concursos-literarios#blog-list" data-category-filter="concursos-literarios">Concursos literários</a>
 </nav>
 <div class="blog-list" id="blog-list">
 {% assign posts_ordenados = site.posts | sort: 'date' | reverse %}
@@ -90,11 +91,12 @@ main.wrap{width:min(1140px,calc(100% - 40px))}
   const pagination=document.getElementById('blog-pagination');
   const empty=document.getElementById('blog-filter-empty');
   const params=new URLSearchParams(window.location.search);
-  const category=params.get('categoria')==='contos'?'contos':'todos';
+  const selected=params.get('categoria');
+  const category=['contos','concursos-literarios'].includes(selected)?selected:'todos';
   document.querySelectorAll('[data-category-filter]').forEach(link=>{
     if(link.dataset.categoryFilter===category)link.setAttribute('aria-current','true');
   });
-  const matching=posts.filter(post=>category==='todos'||post.dataset.category==='contos');
+  const matching=posts.filter(post=>category==='todos'||(category==='contos'&&post.dataset.category==='contos')||(category==='concursos-literarios'&&post.dataset.category.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-')==='concursos-literarios'));
   const totalPages=Math.ceil(matching.length/perPage);
   const requested=Number(params.get('pagina'));
   const page=Number.isInteger(requested)&&requested>=1?Math.min(requested,Math.max(totalPages,1)):1;
