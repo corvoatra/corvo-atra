@@ -20,8 +20,52 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 .blog-list{display:grid;gap:22px;margin-top:38px}.blog-card{display:grid;grid-template-columns:minmax(0,220px) 1fr;border:1px solid #343434;background:#0c0c0c;overflow:hidden}.blog-card:not(:has(img)){grid-template-columns:1fr}.blog-card-image{width:100%;height:100%;min-height:180px;object-fit:cover;display:block}.blog-card-body{padding:26px}.blog-card h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.25;margin:0 0 12px}.blog-card h2 a:hover,.read-more:hover{text-decoration:underline}.blog-card p{margin:0 0 15px}.read-more{font:.77rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff}.blog-empty{border:1px solid #343434;padding:32px}.blog-empty h2{margin-top:0}@media(max-width:650px){.blog-card{grid-template-columns:1fr}.blog-card-image{height:210px;min-height:0}}
 
 .post{max-width:780px;margin:auto}.post .eyebrow a:hover{text-decoration:underline}.post h1{overflow-wrap:anywhere}.post-hero{display:block;width:100%;height:auto;max-height:440px;object-fit:cover;margin:32px 0}.post-content{font-size:1.12rem;line-height:1.9;color:#dedede;margin:42px 0}.post-content p{margin:0 0 1.35em}.post-content h2,.post-content h3{color:#f5f5f5;line-height:1.3;margin:1.8em 0 .65em}.post-content h2{font-size:1.75rem}.post-content h3{font-size:1.35rem}.post-content a{text-decoration:underline;text-underline-offset:3px}.post-content img{max-width:100%;height:auto}.post-content blockquote{border-left:2px solid #aaa;padding-left:22px;margin:28px 0;color:#c9c9c9}.post-content pre{max-width:100%;overflow:auto;padding:18px;background:#171717}.post-content ul,.post-content ol{padding-left:1.5em}.post-end{border-top:1px solid #333;padding-top:30px}
-</style><link href="{{ '/site-desktop.css?v=espacamento-global-7' | relative_url }}" rel="stylesheet"/>{% include seo-head.html %}</head><body>{% include site-header.html %}<hr/><main class="wrap"><article class="post"><p class="eyebrow"><a href="{{ '/blog/' | relative_url }}">← Blog</a> · {{ page.date | date: "%d/%m/%Y" }}{% if page.category %} · {{ page.category }}{% endif %}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}{% if page.image %}<img alt="{{ page.image_alt | default: page.title | escape }}" class="post-hero" src="{{ page.image | relative_url }}"/>{% endif %}
-<div class="post-content">
+
+/* Corvo Atra — leitor editorial */
+:root{--reader-bg:#0e0c0c;--reader-paper:#171414;--reader-ink:#e9e0d7;--reader-muted:#ad9f96;--reader-accent:#b99581}
+body.reader-sepia{--reader-bg:#e5d7bd;--reader-paper:#f5ebd7;--reader-ink:#352b25;--reader-muted:#6d5c50;--reader-accent:#87573c}
+body.reader-light{--reader-bg:#ececec;--reader-paper:#fff;--reader-ink:#242424;--reader-muted:#666;--reader-accent:#8b4545}
+.reader-progress{position:fixed;top:76px;left:0;width:0;height:3px;background:#bb7769;z-index:9998;transition:width .12s linear}
+.reader-shell{max-width:1050px;margin:0 auto 65px;padding:0 20px 40px;background:var(--reader-bg);border:1px solid #292323;color:var(--reader-ink);transition:background .2s,color .2s}
+.reader-topline{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:21px 6px;border-bottom:1px solid #51433b;font:600 .7rem Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--reader-muted)}
+.reader-topline a{color:inherit}
+.reader-heading{max-width:850px;margin:0 auto;padding:45px 15px 28px;text-align:center}
+.reader-heading .eyebrow{color:var(--reader-accent);margin-bottom:24px}
+.reader-heading h1{color:var(--reader-ink);font-size:clamp(2.25rem,5vw,4.3rem);line-height:1.12;margin:0 auto 20px;letter-spacing:-.025em}
+.reader-heading .lead{margin:0 auto 22px;color:var(--reader-muted);font-size:1.1rem;line-height:1.7}
+.reader-rule{height:1px;width:60px;background:var(--reader-accent);margin:25px auto}
+.reader-cover{display:block;width:min(100%,880px);max-height:500px;object-fit:cover;margin:0 auto 26px;border-radius:3px}
+.reader-toolbar{position:sticky;top:76px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 20px;margin:25px auto 0;max-width:870px;background:var(--reader-paper);border:1px solid #4b3c35;color:var(--reader-ink)}
+.reader-toolbar-label{font:600 .7rem Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--reader-muted)}
+.reader-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.reader-tools button{cursor:pointer;background:transparent;border:1px solid #75665d;color:var(--reader-ink);border-radius:3px;padding:8px 11px;font:600 .78rem Arial,sans-serif;min-height:36px}
+.reader-tools button:hover,.reader-tools button:focus-visible,.reader-tools button[aria-pressed=true]{border-color:var(--reader-accent);background:rgba(156,120,96,.15)}
+.reader-body{max-width:870px;margin:0 auto;padding:34px clamp(20px,5vw,65px) 46px;background:var(--reader-paper);color:var(--reader-ink);border:1px solid #4b3c35;border-top:0}
+.reader-body .post-content{font-size:var(--reader-font-size,1.15rem);line-height:1.95;color:var(--reader-ink);margin:0}
+.reader-body .post-content p{color:inherit;margin:0 0 1.45em}
+.reader-body .post-content h2,.reader-body .post-content h3{color:inherit}
+.reader-body .post-content a{color:var(--reader-accent);text-underline-offset:4px}
+.reader-body .post-content img{display:block;max-width:100%;height:auto;margin:30px auto;border-radius:3px}
+.reader-body .post-content figcaption{text-align:center;color:var(--reader-muted);font: .85rem/1.5 Arial,sans-serif}
+.reader-body .post-content blockquote{border-color:var(--reader-accent);color:var(--reader-ink);font-style:italic}
+.reader-body .post-content iframe{max-width:100%}
+.reader-body .post-content pre{color:var(--reader-ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.reader-body .post-content>p:first-child:first-letter{font-size:1.6em}
+.reader-contents{max-width:870px;margin:16px auto 0;padding:15px 20px;border:1px solid #4b3c35;background:var(--reader-paper)}
+.reader-contents summary{cursor:pointer;color:var(--reader-ink);font:600 .8rem Arial,sans-serif;letter-spacing:.08em}
+.reader-contents ol{margin:12px 0 0;padding-left:20px}.reader-contents li{margin:7px 0}.reader-contents a{color:var(--reader-ink);text-decoration:underline;text-decoration-color:var(--reader-accent)}
+.reader-bottom{max-width:870px;margin:24px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--reader-muted);font:.78rem Arial,sans-serif}
+.reader-bottom button{cursor:pointer;background:transparent;border:1px solid #75665d;padding:11px 15px;color:var(--reader-ink)}
+.reader-bottom a{color:var(--reader-ink);text-decoration:underline}
+@media(max-width:768px){.reader-progress{top:105px}.reader-toolbar{top:105px}.reader-shell{padding:0 12px 28px}.reader-heading{padding:35px 5px 20px}.reader-body{padding:28px 19px}.reader-toolbar{padding:12px}.reader-toolbar-label{width:100%}}
+@media(prefers-reduced-motion:reduce){.reader-progress{transition:none}}
+</style><link href="{{ '/site-desktop.css?v=espacamento-global-7' | relative_url }}" rel="stylesheet"/>{% include seo-head.html %}</head><body>{% include site-header.html %}<hr/><div class="reader-progress" id="reader-progress" aria-hidden="true"></div><main class="wrap"><article class="reader-shell" id="reader-article">
+<div class="reader-topline"><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a><span>CORVO ATRA / PUBLICAÇÕES</span><span id="reader-time">Leitura</span></div>
+<div class="reader-heading"><p class="eyebrow">{{ page.date | date: "%d/%m/%Y" }}{% if page.category %} · {{ page.category }}{% endif %}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}<div class="reader-rule"></div></div>
+{% if page.image %}<img class="reader-cover" alt="{{ page.image_alt | default: page.title | escape }}" src="{{ page.image | relative_url }}"/>{% endif %}
+<div class="reader-toolbar" role="group" aria-label="Preferências de leitura"><span class="reader-toolbar-label">Seu espaço de leitura</span><div class="reader-tools"><button type="button" id="reader-decrease" aria-label="Diminuir tamanho do texto">A−</button><button type="button" id="reader-increase" aria-label="Aumentar tamanho do texto">A+</button><button type="button" data-reader-theme="dark" aria-pressed="true">Escuro</button><button type="button" data-reader-theme="sepia" aria-pressed="false">Sépia</button><button type="button" data-reader-theme="light" aria-pressed="false">Claro</button><button type="button" id="reader-copy">Copiar link</button></div></div>
+<details class="reader-contents" id="reader-contents" hidden><summary>Nesta publicação</summary><ol id="reader-toc"></ol></details>
+<div class="reader-body"><div class="post-content" id="reader-text">
   {{ content }}
 
   {% if page.pdf %}
@@ -60,5 +104,27 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
     </div>
   </section>
   {% endif %}
-</div>
-<div class="post-end"><a class="button secondary" href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a></div></article></main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="index.html">Início</a><a href="obras.html">Obras</a><a href="blog/">Blog</a><a href="autor.html">Sobre o autor</a><a href="corvo-atra.html">Corvo Atra</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer></body></html>
+</div></div>
+<div class="reader-bottom"><a href="{{ '/blog/' | relative_url }}">← Voltar ao blog</a><span id="reader-finish">Fim da publicação</span><button type="button" id="reader-top">↑ Voltar ao início</button></div>
+</article></main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="{{ '/' | relative_url }}">Início</a><a href="{{ '/obras.html' | relative_url }}">Obras</a><a href="{{ '/blog/' | relative_url }}">Blog</a><a href="{{ '/autor.html' | relative_url }}">Sobre o autor</a><a href="{{ '/corvo-atra.html' | relative_url }}">Corvo Atra</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer><script>
+(function(){
+  const article=document.getElementById('reader-article'),body=document.getElementById('reader-text'),progress=document.getElementById('reader-progress');
+  if(!article||!body)return;
+  const count=(body.textContent||'').trim().split(/\s+/).filter(Boolean).length;
+  document.getElementById('reader-time').textContent=Math.max(1,Math.ceil(count/220))+' min de leitura';
+  let size=1.15;try{const n=Number(localStorage.getItem('corvo-reader-size'));if(n>=.95&&n<=1.55)size=n;}catch(e){}
+  function font(){body.style.setProperty('--reader-font-size',size+'rem');}
+  font();
+  document.getElementById('reader-increase').addEventListener('click',()=>{size=Math.min(1.55,Math.round((size+.1)*100)/100);font();try{localStorage.setItem('corvo-reader-size',size)}catch(e){}});
+  document.getElementById('reader-decrease').addEventListener('click',()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);font();try{localStorage.setItem('corvo-reader-size',size)}catch(e){}});
+  function theme(value){document.body.classList.toggle('reader-sepia',value==='sepia');document.body.classList.toggle('reader-light',value==='light');document.querySelectorAll('[data-reader-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.readerTheme===value)));}
+  let saved='dark';try{saved=localStorage.getItem('corvo-reader-theme')||'dark'}catch(e){}theme(['dark','sepia','light'].includes(saved)?saved:'dark');
+  document.querySelectorAll('[data-reader-theme]').forEach(b=>b.addEventListener('click',()=>{theme(b.dataset.readerTheme);try{localStorage.setItem('corvo-reader-theme',b.dataset.readerTheme)}catch(e){}}));
+  document.getElementById('reader-copy').addEventListener('click',async()=>{const b=document.getElementById('reader-copy');try{await navigator.clipboard.writeText(location.href);b.textContent='Link copiado';setTimeout(()=>b.textContent='Copiar link',1800)}catch(e){b.textContent='Copie o endereço do navegador';}});
+  document.getElementById('reader-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const heads=[...body.querySelectorAll('h2,h3')].filter(h=>!h.closest('.post-pdf,.post-downloads'));
+  if(heads.length){const toc=document.getElementById('reader-contents'),list=document.getElementById('reader-toc');toc.hidden=false;heads.forEach((h,i)=>{if(!h.id)h.id='secao-'+(i+1);const li=document.createElement('li'),a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;li.appendChild(a);list.appendChild(li);});}
+  let ticking=false;function update(){const rect=article.getBoundingClientRect(),height=article.offsetHeight-window.innerHeight;const fraction=height>0?Math.max(0,Math.min(1,-rect.top/height)):1;progress.style.width=(fraction*100)+'%';ticking=false;}
+  addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});addEventListener('resize',update);update();
+})();
+</script></body></html>
