@@ -119,7 +119,8 @@ header nav a:hover,header nav a:focus-visible { color:#fff; }
 <h2 class="section-title">Últimas postagens</h2>
 <p class="section-copy">Contos, novidades e reflexões do universo Corvo Atra.</p>
 <div class="home-posts-grid">
-{% for post in site.posts limit:3 %}
+{% assign posts_recentes = site.posts | sort: 'date' | reverse %}
+{% for post in posts_recentes limit:3 %}
 <article class="home-post-card">
 {% if post.image %}<a class="home-post-cover" href="{{ post.url | relative_url }}"><img loading="lazy" src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title | escape }}"/></a>{% endif %}
 <div class="home-post-content">
