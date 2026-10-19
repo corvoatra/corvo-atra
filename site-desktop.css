@@ -192,3 +192,12 @@ body>main:not(.wrap)>.featured:first-child{padding-top:var(--site-content-offset
 @media(max-width:768px){
   :root{--site-content-offset:24px}
 }
+
+/* Dropdown da Wiki no menu compartilhado — desktop e mobile */
+header.wrap nav .site-nav-dropdown{position:relative;display:inline-flex;align-items:center;gap:2px}
+header.wrap nav .site-nav-dropdown-toggle{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:0;background:transparent;color:#d83a3a;font:1.2rem Arial,sans-serif;min-width:26px;min-height:38px;padding:0 4px}
+header.wrap nav .site-nav-submenu{display:none;position:absolute;top:100%;left:0;min-width:190px;background:#111;border:1px solid #383030;box-shadow:0 12px 25px #0009;z-index:100;padding:6px 0}
+header.wrap nav .site-nav-dropdown:hover .site-nav-submenu,header.wrap nav .site-nav-dropdown:focus-within .site-nav-submenu,header.wrap nav .site-nav-dropdown.is-open .site-nav-submenu{display:block}
+header.wrap nav .site-nav-submenu a{display:block;padding:12px 16px;color:#ddd!important;white-space:nowrap;font-size:.84rem;text-align:left}
+header.wrap nav .site-nav-submenu a:hover,header.wrap nav .site-nav-submenu a:focus-visible{background:#211616;color:#e66b6b!important}
+@media(max-width:768px){header.wrap nav .site-nav-submenu{left:50%;transform:translateX(-50%)}header.wrap nav .site-nav-dropdown-toggle{min-height:42px}}
