@@ -1,0 +1,206 @@
+/* Corvo Atra — apresentação compartilhada das Wikis de Guardiões do Véu.
+   Regras limitadas ao conteúdo da Wiki; cabeçalho e rodapé globais não mudam. */
+main.wrap:has(.wiki-article) {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+main.wrap .wiki-article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 295px);
+  align-items: start;
+  gap: clamp(20px, 3vw, 36px);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+main.wrap .wiki-article > .wiki-content,
+main.wrap .wiki-article > .wiki-infobox {
+  min-width: 0;
+  max-width: 100%;
+}
+main.wrap .wiki-content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+main.wrap .wiki-content p,
+main.wrap .wiki-content li,
+main.wrap .wiki-content h2,
+main.wrap .wiki-content h3,
+main.wrap .wiki-content a,
+main.wrap .wiki-infobox dt,
+main.wrap .wiki-infobox dd,
+main.wrap .page-heading,
+main.wrap .breadcrumb {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal;
+}
+main.wrap .wiki-content .entry-section {
+  min-width: 0;
+  max-width: 100%;
+}
+main.wrap .wiki-content .entry-section > h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+  line-height: 1.35;
+  margin: 38px 0 18px;
+  padding-bottom: 10px;
+  color: #145a86;
+  border-bottom: 1px solid rgba(22,77,113,.32);
+  font-weight: normal;
+}
+main.wrap .wiki-content .entry-section > h3 {
+  font-size: clamp(1.08rem, 2vw, 1.2rem);
+  line-height: 1.4;
+  margin: 25px 0 12px;
+  color: #1a5379;
+  font-weight: normal;
+}
+main.wrap .wiki-content .entry-section p,
+main.wrap .wiki-content .entry-section li {
+  font-size: 1rem;
+  line-height: 1.85;
+  text-align: left;
+}
+main.wrap .wiki-content .wiki-source-list {
+  list-style: disc outside;
+  padding-left: 1.55rem;
+  margin: 10px 0 24px;
+}
+main.wrap .wiki-content .wiki-source-list li {
+  padding-left: 2px;
+  margin: 0 0 12px;
+}
+main.wrap .wiki-content .wiki-source-list li::marker {color:#17618c}
+main.wrap .wiki-infobox {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  border: 1px solid #82afcc;
+  background: #f2f9ff;
+  padding: 16px;
+}
+main.wrap .wiki-infobox > h2 {
+  color: #15577e;
+  text-align: center;
+  line-height: 1.3;
+}
+main.wrap .wiki-infobox .portrait {
+  width: 100%;
+  max-width: 100%;
+}
+main.wrap .wiki-infobox .portrait svg {
+  display: block;
+  max-width: 100%;
+}
+main.wrap .wiki-infobox .info-row {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+  gap: 9px;
+}
+main.wrap .wiki-infobox .info-row > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+main.wrap .wiki-infobox img {max-width:100%;height:auto}
+main.wrap .wiki-content a:not(.book-card),
+main.wrap .wiki-infobox a,
+main.wrap .breadcrumb a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+@media (max-width: 750px) {
+  main.wrap:has(.wiki-article) {
+    width: calc(100% - 32px) !important;
+    margin-inline: auto;
+    padding-top: 24px !important;
+    padding-bottom: 60px !important;
+  }
+  main.wrap .wiki-article {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  main.wrap .wiki-article > .wiki-content,
+  main.wrap .wiki-article > .wiki-infobox {
+    width: 100%;
+    flex: 0 1 auto;
+  }
+  main.wrap .wiki-article > .wiki-infobox {
+    order: -1;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  main.wrap .wiki-infobox .portrait {
+    max-width: 260px;
+    margin-inline: auto;
+  }
+  main.wrap .page-heading {
+    font-size: clamp(1.9rem, 7.5vw, 2.7rem);
+    line-height: 1.18;
+    margin-bottom: 22px;
+  }
+  main.wrap .breadcrumb {
+    font-size: .78rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  main.wrap .wiki-content .intro {
+    font-size: 1.04rem;
+    line-height: 1.75;
+    margin-bottom: 22px;
+  }
+  main.wrap .wiki-content .entry-section > h2 {
+    font-size: 1.4rem;
+    line-height: 1.35;
+    margin: 30px 0 14px;
+  }
+  main.wrap .wiki-content .entry-section > h3 {
+    font-size: 1.1rem;
+    margin: 22px 0 10px;
+  }
+  main.wrap .wiki-content .entry-section p,
+  main.wrap .wiki-content .entry-section li {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  main.wrap .wiki-content .wiki-source-list {
+    padding-left: 1.3rem;
+    margin-bottom: 20px;
+  }
+  main.wrap .wiki-infobox .info-row {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    gap: 8px;
+  }
+  main.wrap .wiki-content .character-list {columns:1}
+  main.wrap .wiki-content img,
+  main.wrap .wiki-content svg {max-width:100%;height:auto}
+  main.wrap .wiki-content details {max-width:100%}
+}
+@media (max-width: 380px) {
+  main.wrap:has(.wiki-article) {width:calc(100% - 24px) !important}
+  main.wrap .wiki-infobox {padding:13px}
+  main.wrap .wiki-infobox .info-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  main.wrap .wiki-content .wiki-source-list {padding-left:1.15rem}
+}
+/* Páginas de índice: cartões nunca devem forçar a largura da tela. */
+@media (max-width: 650px) {
+  main.wrap .guardioes-books,
+  main.wrap .guardioes-characters,
+  main.wrap .guardioes-bestiary,
+  main.wrap .guardioes-welcome {
+    max-width:100%;
+    min-width:0;
+  }
+  main.wrap .book-grid,
+  main.wrap .guardioes-character-grid,
+  main.wrap .bestiary-grid {min-width:0}
+  main.wrap .book-card,
+  main.wrap .guardioes-character-card,
+  main.wrap .bestiary-card {min-width:0;overflow-wrap:anywhere}
+  main.wrap .book-cover {min-width:0}
+}
