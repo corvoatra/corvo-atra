@@ -75,7 +75,8 @@ main.wrap{width:min(1140px,calc(100% - 40px))}
  .blog-card .read-more{font-size:.77rem;color:#ed8989;padding:10px 0;min-height:40px}
  .blog-pagination{gap:8px}
 }
-</style><link href="../site-desktop.css?v=espacamento-global-7" rel="stylesheet"/>{% include seo-head.html %}</head><body>{% include site-header.html %}<hr/><main class="wrap">
+</style><link href="../site-desktop.css?v=espacamento-global-7" rel="stylesheet"/>{% include seo-head.html %}<link rel="stylesheet" href="{{ '/assets/css/site-footer.css?v=20261019-1' | relative_url }}">
+</head><body>{% include site-header.html %}<hr/><main class="wrap">
 <nav class="blog-category-bar" aria-label="Navegação das postagens">
 <a href="./#blog-list" data-category-filter="todos">Todos os posts</a>
 <details class="blog-category-menu">
@@ -99,7 +100,7 @@ main.wrap{width:min(1140px,calc(100% - 40px))}
 <p class="blog-filter-empty" id="blog-filter-empty" hidden>Nenhum texto encontrado nesta categoria.</p>
 <nav class="blog-pagination" id="blog-pagination" aria-label="Páginas do blog" hidden></nav>
 
-</main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="../index.html">Início</a><a href="../obras.html">Obras</a><a href="../blog/">Blog</a><a href="../autor.html">Sobre o autor</a><a href="../corvo-atra.html">Corvo Atra</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer><script>
+</main>{% include site-footer.html %}<script>
 (function(){
   const perPage=12;
   const posts=Array.from(document.querySelectorAll('[data-blog-post]'));
