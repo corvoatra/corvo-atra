@@ -2,7 +2,7 @@
 title: Por que criei meu próprio sele literário?
 date: 2026-10-19T07:33
 category: Diário de Escrita
-image: /assets/imagens/blog/writing-g9ccb3e52e1920.jpg
+image: /assets/imagens/blog/1.png
 ---
 Eu passei quase sete anos escrevendo *[Os Lucidentes](https://corvoatra.github.io/corvo-atra/blog/2026/10/17/passageira-fantasma/)*, o meu primeiro livro. A primeira coisa que eu fiz após digitar a última palavra foi pesquisar por editoras com as quais o meu projeto fosse compatível. Foi exatamente nesse momento que eu descobri que terminar de escrever era apenas o começo.
 
