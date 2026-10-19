@@ -30,14 +30,15 @@ header nav { display:flex; justify-content:center; align-items:center; flex-wrap
 header nav a { color:#d0d0d0; transition:color .2s; }
 header nav a:hover,header nav a:focus-visible { color:#fff; }
 @media(max-width:480px) { header nav { column-gap:18px; row-gap:10px; font-size:.73rem; } }
-</style><link href="site-desktop.css?v=espacamento-global-7" rel="stylesheet"/><link href="livros-layout.css" rel="stylesheet"/>{% include seo-head.html %}</head>
+</style><link href="site-desktop.css?v=espacamento-global-7" rel="stylesheet"/><link href="livros-layout.css" rel="stylesheet"/>{% include seo-head.html %}<link rel="stylesheet" href="{{ '/assets/css/site-footer.css?v=20261019-1' | relative_url }}">
+</head>
 <body>
 {% include site-header.html %}<hr/>
 <main class="wrap"><a class="back" href="obras.html">← Voltar para a página inicial</a><div class="book-layout book-detail-layout">
 <div aria-label="Capa do livro Os Lucidentes" class="cover book-detail-cover" role="img"><img alt="Capa do livro Os Lucidentes" src="assets/imagens/capa-os-lucidentes.png"/></div>
 <div class="details book-detail-content"><p class="eyebrow">Guardiões do Véu · Volume 1</p><h1>Os Lucidentes</h1><h2 class="synopsis-title" id="sinopse">Sinopse</h2><p class="synopsis">Nicholas passou a vida inteira tentando ignorar o inexplicável. Entre o silêncio de um pai afundado na bebida, as piadas cruéis no colégio e o trabalho monótono no mercadinho do bairro, ver criaturas bizarras era apenas mais um problema que ele preferia manter trancado na própria mente.</p><p class="synopsis">Após uma série de ataques, ele cai de paraquedas na Guilda, uma organização secreta escondida sob o nosso mundo. Lá, Nicholas descobre que nunca esteve enlouquecendo. Seu corpo emana uma energia chamada Éter, um poder raro capaz de atrair horrores que se alimentam daquilo que as pessoas comuns não podem ver.</p>
 <h2 class="buy-title">Escolha sua edição</h2><div class="buy-options"><a class="buy-button" href="https://loja.uiclap.com/titulo/ua209404" rel="noopener noreferrer" target="_blank">Comprar livro físico</a><a class="buy-button secondary" href="https://www.amazon.com.br/Os-Lucidentes-Guardi%C3%B5es-V%C3%A9u-Livro-ebook/dp/B0H4JCN62J/" rel="noopener noreferrer" target="_blank">Comprar e-book</a><a aria-label="Ler amostra de Os Lucidentes nesta página" class="buy-button secondary sample-button" href="assets/pdfs/os-lucidentes-amostra.pdf" id="open-sample">Amostra ↗</a></div><p class="buy-help">Leia a amostra diretamente nesta página. Os botões de compra direcionam para as lojas oficiais de cada edição.</p></div>
-</div></main><footer><div class="brand">CORVO ATRA</div><nav aria-label="Navegação do rodapé" class="links"><a href="index.html">Início</a><a href="obras.html">Obras</a><a href="blog/">Blog</a><a href="autor.html">Sobre o autor</a><a href="corvo-atra.html">Corvo Atra</a></nav><div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div></footer>
+</div></main>{% include site-footer.html %}
 <div aria-labelledby="sample-title" aria-modal="true" class="sample-modal" hidden="" id="sample-modal" role="dialog">
 <div class="sample-panel">
 <div class="sample-toolbar"><span id="sample-title">Os Lucidentes — Amostra</span><div class="sample-actions"><a href="assets/pdfs/assinatura-instantanea-amostra.pdf" rel="noopener noreferrer" target="_blank">Abrir PDF em outra aba</a><button aria-label="Fechar amostra" id="close-sample" type="button">Fechar ×</button></div></div>
