@@ -1,0 +1,11 @@
+<footer class="site-footer"{% if include.id %} id="{{ include.id }}"{% endif %}>
+  <div class="brand">CORVO ATRA</div>
+  <nav class="links" aria-label="Navegação do rodapé">
+    <a href="{{ '/index.html' | relative_url }}">Início</a>
+    <a href="{{ '/obras.html' | relative_url }}">Obras</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/autor.html' | relative_url }}">Sobre o autor</a>
+    <a href="{{ '/corvo-atra.html' | relative_url }}">Corvo Atra</a>
+  </nav>
+  <div class="copyright">© 2026 Corvo Atra. Todos os direitos reservados.</div>
+</footer>
