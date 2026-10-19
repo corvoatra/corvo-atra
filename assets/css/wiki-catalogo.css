@@ -1,0 +1,44 @@
+
+/* Catálogos da Wiki Guardiões do Véu — complementa o tema azul-claro existente. */
+main.wrap.catalog-page{max-width:1100px;padding-top:62px!important;text-align:left!important}
+main.wrap.catalog-page::before{margin:0 0 30px}
+main.wrap.catalog-page .catalog-breadcrumb{margin:0 0 23px;color:#315873;font:normal .83rem/1.6 Arial,sans-serif}
+main.wrap.catalog-page .catalog-breadcrumb a{color:#145a86;text-decoration:underline!important;text-underline-offset:3px}
+main.wrap.catalog-page h1{text-align:left;font-size:clamp(2.1rem,5vw,3.6rem);margin:0;color:#103954}
+main.wrap.catalog-page h1::after{margin:24px 0 0;width:min(280px,65vw)}
+main.wrap.catalog-page .catalog-intro{margin:28px 0 30px;max-width:760px;color:#31546d;font:normal 1.02rem/1.8 Georgia,serif}
+.catalog-controls{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:14px;align-items:end;padding:23px;background:#edf7ff;border:1px solid #8fb5cd;margin:0 0 20px}
+.catalog-controls .catalog-field{min-width:0;display:flex;flex-direction:column;gap:7px}
+.catalog-controls label{font:bold .8rem/1.3 Arial,sans-serif;color:#1a5275;letter-spacing:.02em}
+.catalog-controls input,.catalog-controls select{box-sizing:border-box;display:block;width:100%;min-width:0;height:46px;padding:10px 13px;background:#fff;border:1px solid #8fb5cd;border-radius:5px;color:#153b59;font:normal .96rem Arial,sans-serif}
+.catalog-controls input:focus-visible,.catalog-controls select:focus-visible,.catalog-clear:focus-visible,.catalog-pagination button:focus-visible{outline:3px solid #17618c;outline-offset:2px}
+.catalog-controls input::placeholder{color:#60798d}
+.catalog-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 22px}
+.catalog-count{margin:0;color:#31546d;font:normal .9rem/1.5 Arial,sans-serif}
+.catalog-clear{background:transparent;border:0;padding:6px 0;color:#145a86;cursor:pointer;font:normal .86rem Arial,sans-serif;text-decoration:underline;text-underline-offset:3px}
+main.wrap.catalog-page .catalog-collection{width:100%;margin:0;text-align:left}
+main.wrap.catalog-page .catalog-collection .guardioes-character-grid,
+main.wrap.catalog-page .catalog-collection .bestiary-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+main.wrap.catalog-page .catalog-collection .guardioes-character-card,
+main.wrap.catalog-page .catalog-collection .bestiary-card{display:block;min-width:0;padding:11px;background:#edf7ff!important;border-color:#8fb5cd!important;color:#153b59!important;text-decoration:none!important;transition:transform .2s,border-color .2s,box-shadow .2s}
+main.wrap.catalog-page .catalog-collection .guardioes-character-card:hover,
+main.wrap.catalog-page .catalog-collection .guardioes-character-card:focus-visible,
+main.wrap.catalog-page .catalog-collection .bestiary-card:hover,
+main.wrap.catalog-page .catalog-collection .bestiary-card:focus-visible{transform:translateY(-3px);border-color:#17618c!important;box-shadow:0 6px 18px rgba(23,97,140,.13)}
+main.wrap.catalog-page .catalog-collection .guardioes-character-card h3,
+main.wrap.catalog-page .catalog-collection .bestiary-card h3{color:#153b59!important;font-size:1.08rem;line-height:1.4;letter-spacing:.015em;margin:13px 0 5px}
+main.wrap.catalog-page .catalog-collection .catalog-card-meta{margin:0 0 7px;color:#315873;font:normal .81rem/1.5 Arial,sans-serif;text-align:center;min-height:2.3em}
+main.wrap.catalog-page .catalog-collection .character-ornament,
+main.wrap.catalog-page .catalog-collection .bestiary-ornament{color:#17618c}
+.catalog-empty{border:1px dashed #8fb5cd;padding:40px 22px;text-align:center;background:#edf7ff;color:#31546d}
+.catalog-empty h2{font:normal 1.4rem Georgia,serif;color:#145a86;margin:0 0 8px}
+.catalog-empty p{font:normal .95rem/1.6 Arial,sans-serif;margin:0}
+.catalog-pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin:28px 0 0;font:normal .86rem Arial,sans-serif;color:#315873}
+.catalog-pagination button{border:1px solid #8fb5cd;border-radius:4px;padding:9px 13px;background:#edf7ff;color:#145a86;cursor:pointer;font:normal .85rem Arial,sans-serif}
+.catalog-pagination button:hover:not(:disabled){border-color:#17618c;background:#dceefa}
+.catalog-pagination button:disabled{opacity:.4;cursor:not-allowed}
+main.wrap.catalog-page .catalog-back{display:inline-block;margin-top:34px;color:#145a86;text-decoration:underline!important;text-underline-offset:3px;font:normal .9rem Arial,sans-serif}
+.catalog-collection [hidden],.catalog-empty[hidden],.catalog-pagination[hidden]{display:none!important}
+@media(max-width:850px){main.wrap.catalog-page .catalog-collection .guardioes-character-grid,main.wrap.catalog-page .catalog-collection .bestiary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){main.wrap.catalog-page{width:calc(100% - 32px)!important;padding-top:30px!important;padding-bottom:70px!important}main.wrap.catalog-page .catalog-controls{grid-template-columns:1fr 1fr;padding:16px;gap:13px}main.wrap.catalog-page .catalog-field--search{grid-column:1/-1}main.wrap.catalog-page .catalog-collection .guardioes-character-grid,main.wrap.catalog-page .catalog-collection .bestiary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}main.wrap.catalog-page .catalog-collection .catalog-card-meta{font-size:.76rem}main.wrap.catalog-page .catalog-collection .guardioes-character-card h3,main.wrap.catalog-page .catalog-collection .bestiary-card h3{font-size:1rem}}
+@media(max-width:390px){main.wrap.catalog-page .catalog-controls{grid-template-columns:1fr}main.wrap.catalog-page .catalog-field--search{grid-column:auto}main.wrap.catalog-page .catalog-collection .guardioes-character-grid,main.wrap.catalog-page .catalog-collection .bestiary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}main.wrap.catalog-page .catalog-collection .guardioes-character-card,main.wrap.catalog-page .catalog-collection .bestiary-card{padding:7px}}
