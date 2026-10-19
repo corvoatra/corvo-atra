@@ -1,0 +1,130 @@
+---
+layout: null
+permalink: /wiki-monstros.html
+title: "Todos os monstros e criaturas | Wiki Guardiões do Véu"
+seo_title: "Todos os monstros e criaturas | Wiki Corvo Atra"
+seo_description: "Catálogo com pesquisa, filtros e cards de monstros e criaturas de Guardiões do Véu."
+---
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#dceefa"/><title>Todos os monstros e criaturas | Wiki Guardiões do Véu</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050505;color:#eee;font:1rem/1.7 Georgia,'Times New Roman',serif}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}main{min-height:60vh;padding:90px 0 120px;text-align:center}main h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:normal}main a{color:inherit;text-decoration:none}header.wrap nav a{color:#eee;text-decoration:none}header.wrap nav a:visited{color:#eee}main a{color:#dc6767;text-decoration:none;font:.85rem Arial,sans-serif}footer{border-top:1px solid #292929;padding:35px 18px;text-align:center;color:#aaa;font:.8rem Arial,sans-serif}footer .links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:16px 0}footer a{color:inherit;text-decoration:none}footer a:hover{color:#dc6767}footer .brand{font:1.4rem Georgia,serif;letter-spacing:.15em;color:#eee}</style><style id="guardioes-wiki-theme">
+:root{--guardioes-accent:#53A3D6;--guardioes-line:rgba(83,163,214,.35)}
+body{background:radial-gradient(ellipse 75% 380px at 50% 170px,rgba(83,163,214,.12),transparent 75%),#05080c!important;color:#e9f2fa}
+main.wrap{position:relative;min-height:65vh!important;padding:95px 0 125px!important;text-align:center}
+main.wrap::before{content:"";display:block;width:75px;height:2px;margin:0 auto 35px;background:var(--guardioes-accent);box-shadow:0 0 22px rgba(83,163,214,.6)}
+main.wrap h1{color:#eaf6ff;font-size:clamp(2.5rem,6vw,4.4rem);letter-spacing:.025em;text-shadow:0 0 38px rgba(83,163,214,.25);margin:0}
+main.wrap h1::after{content:"";display:block;width:min(280px,60vw);height:1px;margin:34px auto 0;background:linear-gradient(90deg,transparent,var(--guardioes-accent),transparent)}
+main.wrap a{color:var(--guardioes-accent)}
+main.wrap a:hover,main.wrap a:focus-visible{color:#a4d9fb}
+footer{border-top-color:var(--guardioes-line)!important}
+footer a:hover{color:var(--guardioes-accent)!important}
+</style><style id="guardioes-welcome-style">
+.guardioes-welcome{width:min(760px,100%);margin:54px auto 0;padding:36px clamp(22px,5vw,48px);border:1px solid rgba(83,163,214,.55);border-radius:14px;background:linear-gradient(145deg,rgba(83,163,214,.095),rgba(4,12,21,.85));box-shadow:0 15px 45px rgba(0,0,0,.2)}
+.guardioes-welcome h2{margin:0 0 20px;color:#53A3D6;font-size:clamp(1.5rem,3vw,2rem);font-weight:normal}
+.guardioes-welcome p{margin:0 auto;color:#eaf6ff;font-size:clamp(1rem,2vw,1.13rem);line-height:1.85;max-width:640px}
+.guardioes-welcome p+p{margin-top:20px}
+@media(max-width:600px){.guardioes-welcome{margin-top:38px;padding:28px 20px}}
+</style><style id="guardioes-books-style">
+.guardioes-books{width:min(1050px,100%);margin:36px auto 0;text-align:left}
+.guardioes-books>h2{text-align:center;color:#53A3D6;font-size:clamp(1.65rem,3vw,2.2rem);font-weight:normal;margin:0 0 24px}
+.guardioes-books h3{font:normal 1.12rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#b9e0f7;margin:30px 0 16px}
+.guardioes-books .book-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.guardioes-books .book-card{min-width:0;display:flex;flex-direction:column;text-align:center;padding:14px 12px 17px;background:#090e13;border:1px solid rgba(83,163,214,.28);transition:border-color .2s,transform .2s}
+.guardioes-books a.book-card:hover,.guardioes-books a.book-card:focus-visible{border-color:#53A3D6;transform:translateY(-3px)}
+.guardioes-books .book-cover{width:100%;aspect-ratio:148/210;border:1px solid #344553;background:radial-gradient(ellipse at 50% 35%,#242b32,#11151b 55%,#080a0d);display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:14px 9px;color:#eee;overflow:hidden}
+.guardioes-books .book-cover img{width:100%;height:100%;object-fit:contain}
+.guardioes-books .book-cover small{font:.52rem Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#b9c8d5}
+.guardioes-books .book-cover strong{font-size:clamp(.8rem,1.5vw,1.12rem);line-height:1.22;font-weight:normal;text-transform:uppercase}
+.guardioes-books .book-cover em{font:normal .48rem Arial,sans-serif;color:#aeb9c4}
+.guardioes-books .book-volume{font:.68rem Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#53A3D6;margin:16px 0 6px}
+.guardioes-books .book-card h4{font-size:clamp(1.05rem,1.9vw,1.35rem);line-height:1.2;font-weight:normal;color:#f3f7fa;margin:0 0 10px}
+.guardioes-books .book-desc{color:#c4cbd1;font-size:.81rem;line-height:1.55;margin:0 0 16px;flex:1}
+.guardioes-books .book-button{align-self:center;display:inline-block;padding:10px 15px;border:1px solid #53A3D6;color:#b9e0f7;font:.7rem Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.guardioes-books a.book-card .book-button{background:#53A3D6;color:#061018}
+.guardioes-books .book-complementary{max-width:250px}
+@media(max-width:900px){.guardioes-books .book-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.guardioes-books .book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.guardioes-books .book-card{padding:10px}.guardioes-books .book-cover{padding:10px 6px}.guardioes-books .book-card h4{font-size:1.04rem}}
+@media(max-width:390px){.guardioes-books .book-grid{grid-template-columns:1fr}.guardioes-books .book-complementary{max-width:none}}
+</style><style id="guardioes-characters-style">
+.guardioes-characters{width:min(1050px,100%);margin:48px auto 0}
+.guardioes-characters>h2{margin:0 0 22px;padding:15px 20px;border:1px solid rgba(83,163,214,.6);color:#8dcefa;text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:normal;letter-spacing:.09em;background:linear-gradient(90deg,#07121c,#0a2030,#07121c)}
+.guardioes-character-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.guardioes-character-card{min-width:0;padding:8px;border:1px solid rgba(83,163,214,.65);background:#06111b;text-align:center}
+.guardioes-character-portrait{position:relative;aspect-ratio:4/4.6;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 37%,#173c59 0%,#0c2235 37%,#040b12 77%);border:1px solid rgba(83,163,214,.28)}
+.guardioes-character-portrait::before{content:"";position:absolute;width:65%;aspect-ratio:1;border:2px solid rgba(83,163,214,.22);border-radius:50%;top:12%;left:17.5%;box-shadow:0 0 0 22px rgba(83,163,214,.025)}
+.guardioes-character-portrait svg{width:82%;height:85%;position:relative;z-index:1;fill:#020910;filter:drop-shadow(0 0 9px rgba(83,163,214,.25))}
+.guardioes-character-card h3{margin:9px 0 5px;font-size:clamp(.85rem,1.5vw,1.15rem);font-weight:normal;letter-spacing:.06em;color:#f0f8ff}
+.guardioes-character-card .character-ornament{display:flex;align-items:center;justify-content:center;gap:12px;color:#53A3D6;font-size:1rem}
+.guardioes-character-card .character-ornament::before,.guardioes-character-card .character-ornament::after{content:"";height:1px;width:28%;background:linear-gradient(90deg,transparent,#53A3D6)}
+.guardioes-character-card .character-ornament::after{transform:rotate(180deg)}
+@media(max-width:850px){.guardioes-character-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.guardioes-character-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.guardioes-character-card{padding:8px}}
+@media(max-width:390px){.guardioes-character-grid{grid-template-columns:1fr}}
+</style><style>.guardioes-characters .all-characters-label{display:block;margin:23px auto 0;text-align:center;color:#53A3D6;font:normal .9rem Arial,sans-serif;letter-spacing:.03em;text-decoration:underline;text-underline-offset:4px;cursor:default}</style><style id="guardioes-bestiary-style">
+.guardioes-bestiary{width:min(1050px,100%);margin:48px auto 0}
+.guardioes-bestiary>h2{margin:0 0 22px;padding:15px 20px;border:1px solid rgba(83,163,214,.6);color:#8dcefa;text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:normal;letter-spacing:.09em;background:linear-gradient(90deg,#07121c,#0a2030,#07121c)}
+.guardioes-bestiary .bestiary-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.guardioes-bestiary .bestiary-card{min-width:0;padding:8px;border:1px solid rgba(83,163,214,.65);background:#06111b;text-align:center}
+.guardioes-bestiary .bestiary-portrait{position:relative;aspect-ratio:4/4.6;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 37%,#173c59 0%,#0c2235 37%,#040b12 77%);border:1px solid rgba(83,163,214,.28)}
+.guardioes-bestiary .bestiary-portrait::before{content:"";position:absolute;width:65%;aspect-ratio:1;border:2px solid rgba(83,163,214,.22);border-radius:50%;top:12%;left:17.5%}
+.guardioes-bestiary .bestiary-portrait svg{width:90%;height:88%;position:relative;z-index:1;fill:#020910;filter:drop-shadow(0 0 9px rgba(83,163,214,.25))}
+.guardioes-bestiary .bestiary-card h3{margin:9px 0 5px;font-size:clamp(.85rem,1.5vw,1.15rem);font-weight:normal;letter-spacing:.025em;color:#f0f8ff;overflow-wrap:anywhere}
+.guardioes-bestiary .bestiary-ornament{display:flex;align-items:center;justify-content:center;gap:12px;color:#53A3D6;font-size:1rem}
+.guardioes-bestiary .bestiary-ornament::before,.guardioes-bestiary .bestiary-ornament::after{content:"";height:1px;width:28%;background:linear-gradient(90deg,transparent,#53A3D6)}
+.guardioes-bestiary .bestiary-ornament::after{transform:rotate(180deg)}
+.guardioes-bestiary .all-creatures-label{display:block;margin:23px auto 0;text-align:center;color:#53A3D6;font:normal .9rem Arial,sans-serif;letter-spacing:.03em;text-decoration:underline;text-underline-offset:4px;cursor:default}
+@media(max-width:850px){.guardioes-bestiary .bestiary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.guardioes-bestiary .bestiary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.guardioes-bestiary .bestiary-grid{grid-template-columns:1fr}}
+</style><style>.guardioes-characters a.guardioes-character-card{display:block;text-decoration:none;color:inherit}.guardioes-characters a.guardioes-character-card:hover,.guardioes-characters a.guardioes-character-card:focus-visible{border-color:#53A3D6;box-shadow:0 0 15px rgba(83,163,214,.18);transform:translateY(-2px)}</style><link href="{{ '/site-desktop.css?v=wiki-nav-fix-20261019' | relative_url }}" rel="stylesheet"/>{% include seo-head.html %}<style id="guardioes-light-palette">
+:root{color-scheme:light;--accent:#17618c;--line:rgba(22,77,113,.32);--guardioes-accent:#17618c;--guardioes-line:rgba(22,77,113,.32)}
+body{background:#dceefa!important;color:#153b59!important}
+main.wrap{color:#153b59!important}
+main.wrap h1,.page-heading{color:#103954!important;text-shadow:none!important}
+main.wrap a,.breadcrumb a{color:#145a86!important}
+main.wrap a:hover{color:#0b3859!important}
+.breadcrumb,.intro,.wiki-content p,.entry-section p,.wiki-content li,.wiki-content ol,.wiki-content ul{color:#193e59!important}
+.wiki-content h2,.entry-section h2{color:#145a86!important}
+.wiki-content h3,.entry-section h3{color:#1a5379!important}
+.wiki-infobox{background:#f2f9ff!important;border-color:#82afcc!important}
+.wiki-infobox>h2,.wiki-infobox h3{color:#15577e!important}
+.wiki-infobox dt,.info-row dt{color:#1a5275!important}
+.wiki-infobox dd,.info-row dd{color:#193e59!important}
+.wiki-infobox dd.pending,.art-note{color:#526e80!important}
+.spoiler-note{background:#e9f5ff!important;color:#284d68!important}
+details.plot{background:#edf7ff!important;color:#193e59!important}
+details.plot>summary{color:#145a86!important}
+details.plot p{color:#193e59!important}
+.guardioes-welcome{background:#edf7ff!important;border-color:#7eafce!important;box-shadow:0 12px 30px rgba(23,74,108,.09)!important}
+.guardioes-welcome h2,.guardioes-books>h2{color:#145a86!important}
+.guardioes-welcome p{color:#193e59!important}
+.guardioes-books h3{color:#245879!important}
+.guardioes-books .book-card{background:#edf7ff!important;border-color:#8fb5cd!important}
+.guardioes-books .book-volume{color:#17618c!important}
+.guardioes-books .book-card h4,.guardioes-books .book-name{color:#153b59!important}
+.guardioes-books .book-desc{color:#31546d!important}
+.guardioes-books .book-button{color:#145a86!important;border-color:#17618c!important}
+.guardioes-books a.book-card .book-button{background:#17618c!important;color:white!important}
+.guardioes-characters>h2,.guardioes-bestiary>h2{background:#e9f5ff!important;color:#145a86!important;border-color:#82afcc!important}
+.guardioes-character-card,.guardioes-bestiary .bestiary-card{background:#edf7ff!important;border-color:#8fb5cd!important}
+.guardioes-character-card h3,.guardioes-bestiary .bestiary-card h3{color:#153b59!important}
+.guardioes-characters .all-characters-label,.guardioes-bestiary .all-creatures-label{color:#145a86!important}
+header.wrap,header.wrap nav,footer{color:#eee}
+</style><style id="wiki-underlined-links">main.wrap a:not(.book-card):not(.guardioes-character-card):not(.bestiary-card){text-decoration:underline!important;text-underline-offset:3px;text-decoration-thickness:1px}main.wrap a:hover{text-decoration-thickness:2px!important}</style><style id="bestiary-link-style">.guardioes-bestiary a.bestiary-card{display:block;text-decoration:none!important;color:inherit!important;transition:transform .2s,border-color .2s}.guardioes-bestiary a.bestiary-card:hover,.guardioes-bestiary a.bestiary-card:focus-visible{border-color:#17618c!important;transform:translateY(-2px);box-shadow:0 5px 15px rgba(23,97,140,.13)}.guardioes-bestiary a.bestiary-card h3{text-decoration:none!important}</style><link rel="stylesheet" href="{{ '/assets/css/wiki-guardioes-responsive.css?v=20261018-2' | relative_url }}"><style id="guardioes-other-pages-style">
+.guardioes-other-pages{width:min(1050px,100%);margin:48px auto 0;min-width:0;text-align:left}
+.guardioes-other-pages>h2{margin:0 0 22px;padding:15px 20px;border:1px solid #82afcc;color:#145a86;text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:normal;letter-spacing:.07em;background:#e9f5ff}
+.guardioes-other-pages .other-pages-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.guardioes-other-pages .other-page-card{min-width:0;display:flex;align-items:center;gap:16px;padding:22px 20px;border:1px solid #8fb5cd;background:#edf7ff;text-decoration:none!important;color:#153b59!important;transition:transform .2s,border-color .2s,box-shadow .2s}
+.guardioes-other-pages .other-page-card:hover,.guardioes-other-pages .other-page-card:focus-visible{border-color:#17618c;transform:translateY(-2px);box-shadow:0 5px 15px rgba(23,97,140,.13)}
+.guardioes-other-pages .other-page-symbol{flex:0 0 auto;font:normal 2.2rem Georgia,serif;color:#17618c}
+.guardioes-other-pages .other-page-info{min-width:0;display:flex;flex-direction:column;gap:7px}
+.guardioes-other-pages .other-page-info strong{font:normal 1.2rem/1.3 Georgia,serif;color:#153b59}
+.guardioes-other-pages .other-page-info>span{font:normal .87rem/1.6 Arial,sans-serif;color:#31546d}
+.guardioes-other-pages .other-page-arrow{margin-left:auto;color:#17618c;font:1.4rem Arial,sans-serif}
+@media(max-width:650px){.guardioes-other-pages .other-pages-grid{grid-template-columns:1fr}.guardioes-other-pages .other-page-card{padding:18px 14px;gap:12px}.guardioes-other-pages .other-page-info strong{font-size:1.1rem}}
+</style><link rel="stylesheet" href="{{ '/assets/css/wiki-catalogo.css?v=20261018-1' | relative_url }}"></head><body>{% include site-header.html %}<main class="wrap catalog-page" data-catalog><nav class="catalog-breadcrumb" aria-label="Localização na Wiki"><a href="{{ '/wiki.html' | relative_url }}">Wiki</a> / <a href="{{ '/wiki-guardioes-do-veu.html' | relative_url }}">Guardiões do Véu</a> / Todos os monstros e criaturas</nav><h1>Todos os monstros e criaturas</h1><p class="catalog-intro">Explore o bestiário de Guardiões do Véu. Pesquise por nome, tipo ou classificação e filtre as criaturas por categoria ou nível de periculosidade.</p><div class="catalog-controls" role="search" aria-label="Pesquisar e filtrar monstros e criaturas"><div class="catalog-field catalog-field--search"><label for="catalog-search">Pesquisar por nome ou palavra-chave</label><input id="catalog-search" data-catalog-search type="search" placeholder="Ex.: Cuca, elemental, nível 4" autocomplete="off"></div><div class="catalog-field"><label for="catalog-filter">Filtrar por categoria ou nível</label><select id="catalog-filter" data-catalog-filter><option value="">Todos os tipos e níveis</option><optgroup label="Tipo de criatura"><option value="tipo-besta">Bestas</option><option value="tipo-elemental">Elementais</option><option value="tipo-ferico">Féricos</option><option value="tipo-morto-vivo">Mortos-vivos</option><option value="tipo-transmorfo">Transmorfos</option></optgroup><optgroup label="Periculosidade"><option value="nivel-3">Nível 3</option><option value="nivel-4">Nível 4</option><option value="nivel-5">Nível 5</option></optgroup></select></div><div class="catalog-field"><label for="catalog-sort">Ordenar por</label><select id="catalog-sort" data-catalog-sort><option value="az">Nome (A–Z)</option><option value="za">Nome (Z–A)</option></select></div></div><div class="catalog-actions"><p class="catalog-count" data-catalog-count role="status" aria-live="polite">6 resultados encontrados</p><button type="button" class="catalog-clear" data-catalog-clear>Limpar pesquisa e filtros</button></div><section class="guardioes-bestiary catalog-collection" aria-label="Todos os monstros e criaturas"><div class="bestiary-grid" data-catalog-grid><a data-catalog-item="" data-name="Cachorro Infernal" data-search="Cachorro Infernal Bestas MIns-3 Besta Nível 3 Os Lucidentes" data-filters="tipo-besta nivel-3 nivel-4" class="bestiary-card" href="{{ '/wiki-cachorro-infernal.html' | relative_url }}" aria-label="Ver Wiki do Cachorro infernal"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Cachorro Infernal</h3><p class="catalog-card-meta">Besta · Nível 3</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a>
+<a data-catalog-item="" data-name="Corpo-seco" data-search="Corpo-seco Morto-vivo / Transmorfo CMI-4 Morto-vivo / Transmorfo Nível 4 Os Lucidentes" data-filters="tipo-morto-vivo tipo-transmorfo nivel-4" class="bestiary-card" href="{{ '/wiki-corpo-seco.html' | relative_url }}" aria-label="Ver Wiki de Corpo-seco"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Corpo-seco</h3><p class="catalog-card-meta">Morto-vivo / Transmorfo · Nível 4</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a>
+<a data-catalog-item="" data-name="Cuca" data-search="Cuca Férico CMI-4 Férico Nível 4 Os Lucidentes" data-filters="tipo-ferico nivel-4" class="bestiary-card" href="{{ '/wiki-cuca.html' | relative_url }}" aria-label="Ver Wiki de Cuca"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Cuca</h3><p class="catalog-card-meta">Férico · Nível 4</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a>
+<a data-catalog-item="" data-name="Lobisomem" data-search="Lobisomem Transmorfos CMI-4 Transmorfo Nível 4 Os Lucidentes" data-filters="tipo-transmorfo nivel-4" class="bestiary-card" href="{{ '/wiki-lobisomem.html' | relative_url }}" aria-label="Ver Wiki de Lobisomem"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Lobisomem</h3><p class="catalog-card-meta">Transmorfo · Nível 4</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a>
+<a data-catalog-item="" data-name="Mapinguari" data-search="Mapinguari Besta MIns-5 Besta Nível 5 Os Lucidentes" data-filters="tipo-besta nivel-5" class="bestiary-card" href="{{ '/wiki-mapinguari.html' | relative_url }}" aria-label="Ver Wiki de Mapinguari"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Mapinguari</h3><p class="catalog-card-meta">Besta · Nível 5</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a>
+<a data-catalog-item="" data-name="Negro-d'água" data-search="Negro-d'água Elemental CMI-3 Elemental Nível 3 Os Lucidentes" data-filters="tipo-elemental nivel-3" class="bestiary-card" href="{{ '/wiki-negro-dagua.html' | relative_url }}" aria-label="Ver Wiki de Negro-d'água"><div class="bestiary-portrait"><svg viewBox="0 0 200 240" role="img" aria-label="Silhueta genérica provisória de criatura"><path d="M25 226c2-34 15-57 42-68l7-19c-17-13-27-34-27-57 0-13 3-25 10-35L39 16l34 18 18-22 17 21 37-19-10 36c13 15 18 33 17 49-1 22-11 38-25 47l8 14c31 13 42 34 44 66H25z"/><path d="M55 69 26 45l19 41-19 11 29 1 9 22 5-34zM145 68l28-25-17 42 18 13-28 1-8 22-4-35z"/><path d="M78 107l19 8-12 12-20-18zM123 107l-19 8 12 12 20-18zM80 140l20 8 20-8-20 23z"/></svg></div><h3>Negro-d'água</h3><p class="catalog-card-meta">Elemental · Nível 3</p><div class="bestiary-ornament" aria-hidden="true">◇</div></a></div></section><div class="catalog-empty" data-catalog-empty hidden><h2>Nenhum resultado encontrado</h2><p>Tente outra palavra ou altere os filtros.</p></div><nav class="catalog-pagination" data-catalog-pagination hidden aria-label="Páginas dos resultados"><button type="button" data-catalog-prev>Anterior</button><span data-catalog-page-label>Página 1 de 1</span><button type="button" data-catalog-next>Próxima</button></nav><a class="catalog-back" href="{{ '/wiki-guardioes-do-veu.html' | relative_url }}">← Voltar para Guardiões do Véu</a></main><footer><div class="brand">CORVO ATRA</div><nav class="links"><a href="{{ '/index.html' | relative_url }}">Início</a><a href="{{ '/obras.html' | relative_url }}">Obras</a><a href="{{ '/blog/' | relative_url }}">Blog</a><a href="{{ '/wiki.html' | relative_url }}">Wiki</a><a href="{{ '/autor.html' | relative_url }}">Sobre o autor</a><a href="{{ '/corvo-atra.html' | relative_url }}">Corvo Atra</a></nav><div>© 2026 Corvo Atra. Todos os direitos reservados.</div></footer><script src="{{ '/assets/js/wiki-catalogo.js?v=20261018-1' | relative_url }}" defer></script></body></html>
