@@ -204,3 +204,30 @@ main.wrap .breadcrumb a {
   main.wrap .bestiary-card {min-width:0;overflow-wrap:anywhere}
   main.wrap .book-cover {min-width:0}
 }
+
+/* Rodapé legível sobre o fundo azul-claro das Wikis.
+   Não altera o cabeçalho escuro nem o rodapé das demais páginas do site. */
+body > footer {
+  background: #dceefa !important;
+  color: #244b68 !important;
+  border-top: 1px solid #82afcc !important;
+}
+body > footer .brand,
+body > footer > strong {
+  color: #153b59 !important;
+}
+body > footer .links a,
+body > footer a {
+  color: #15577e !important;
+}
+body > footer .links a:hover,
+body > footer .links a:focus-visible,
+body > footer a:hover,
+body > footer a:focus-visible {
+  color: #0b3859 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+body > footer > div:last-child {
+  color: #315873 !important;
+}
