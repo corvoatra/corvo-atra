@@ -1,5 +1,5 @@
 ---
-title: Por que criei meu próprio sele literário?
+title: Por que criei meu próprio selo literário?
 date: 2026-10-19T07:33
 category: Diário de Escrita
 image: /assets/imagens/blog/1.png
